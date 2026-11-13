@@ -6,7 +6,16 @@ import { fileURLToPath } from "node:url";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 
+// Where the site is served from. "/" for a normal domain; the GitHub Pages workflow sets
+// BASE_PATH=/kidpool-web/ so the build works at https://<org>.github.io/kidpool-web/.
+// Images and links go through src/lib/base.js, so every page works under either.
+const BASE = (() => {
+  const b = (process.env.BASE_PATH || "/").trim();
+  return ("/" + b + "/").replace(/\/{2,}/g, "/");
+})();
+
 export default defineConfig(({ isSsrBuild }) => ({
+  base: BASE,
   plugins: [
     react(),
     {
@@ -15,11 +24,13 @@ export default defineConfig(({ isSsrBuild }) => ({
       name: "prerendered-routes",
       configurePreviewServer(server) {
         server.middlewares.use((req, _res, next) => {
-          const [p, q = ""] = (req.url || "/").split("?");
+          const [full, q = ""] = (req.url || "/").split("?");
+          const inBase = full.startsWith(BASE) || full + "/" === BASE;
+          const p = inBase ? "/" + full.slice(BASE.length) : full;
           const clean = p.replace(/\/+$/, "");
           const page = path.join(root, "dist", clean, "index.html");
-          if (clean && fs.existsSync(page)) req.url = `${clean}/index.html${q ? "?" + q : ""}`;
-          else if (clean && !path.extname(clean) && req.headers.accept?.includes("text/html")) req.url = "/404.html";
+          if (clean && fs.existsSync(page)) req.url = `${BASE}${clean.slice(1)}/index.html${q ? "?" + q : ""}`;
+          else if (clean && !path.extname(clean) && req.headers.accept?.includes("text/html")) req.url = `${BASE}404.html`;
           next();
         });
       },

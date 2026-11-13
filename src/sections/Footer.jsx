@@ -1,6 +1,7 @@
 import { Wordmark } from "../components/ui";
 import Leaves from "../components/Leaves";
 import { useActive, Words } from "../components/Reveal";
+import { url } from "../lib/base";
 
 export const CONTACT_EMAIL = "info@nfcsolutionsusa.com";
 export const CONTACT_PHONE = "+1 (800) 965 5147";
@@ -59,10 +60,10 @@ export default function Footer() {
             <h2 className="sft__h rv-up" style={{ "--d": ".25s" }}>About</h2>
             <p className="rv-up" style={{ "--d": ".4s" }}>KidPool helps parents and guardians coordinate rides with families they already know, in their own pools. It isn’t a public ride service. Every ride is agreed by both families.</p>
             <ul className="sft__links">
-              <li className="rv-up sft__li" style={{ "--d": "0.60s" }}><a href="/#how">How it works</a></li>
-              <li className="rv-up sft__li" style={{ "--d": "0.69s" }}><a href="/#families">For families</a></li>
-              <li className="rv-up sft__li" style={{ "--d": "0.78s" }}><a href="/#safety">Safety</a></li>
-              <li className="rv-up sft__li" style={{ "--d": "0.87s" }}><a href="/#faq">FAQs</a></li>
+              <li className="rv-up sft__li" style={{ "--d": "0.60s" }}><a href={url("#how")}>How it works</a></li>
+              <li className="rv-up sft__li" style={{ "--d": "0.69s" }}><a href={url("#families")}>For families</a></li>
+              <li className="rv-up sft__li" style={{ "--d": "0.78s" }}><a href={url("#safety")}>Safety</a></li>
+              <li className="rv-up sft__li" style={{ "--d": "0.87s" }}><a href={url("#faq")}>FAQs</a></li>
             </ul>
           </div>
 
@@ -95,8 +96,8 @@ export default function Footer() {
         <div className="sft__bottom rv-up" style={{ "--d": "1.1s" }}>
           <p>© {year} KidPool. Made for family pools.</p>
           <ul>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/terms">Terms & Conditions</a></li>
+            <li><a href={url("privacy")}>Privacy Policy</a></li>
+            <li><a href={url("terms")}>Terms & Conditions</a></li>
           </ul>
         </div>
       </div>

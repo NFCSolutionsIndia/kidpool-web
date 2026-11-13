@@ -12,6 +12,7 @@ import FAQ from "./sections/FAQ";
 import Footer from "./sections/Footer";
 import Legal from "./sections/Legal";
 import NotFound from "./sections/NotFound";
+import { url, stripBase } from "./lib/base";
 
 /* Real URLs, each pre-rendered at build time so search engines can index them:
    /, /privacy and /terms; anything else is the 404 page. */
@@ -23,12 +24,12 @@ export const routeOf = (path = "/") => {
 };
 
 export default function App({ path }) {
-  const route = routeOf(path ?? (typeof location !== "undefined" ? location.pathname : "/"));
+  const route = routeOf(path ?? (typeof location !== "undefined" ? stripBase(location.pathname) : "/"));
 
   useEffect(() => {
     // old links used "#/privacy" and "#/terms": send them to the real pages
     if (location.hash === "#/privacy" || location.hash === "#/terms") {
-      location.replace(location.hash.slice(1));
+      location.replace(url(location.hash.slice(2)));
       return;
     }
     // arriving at "/#section" (e.g. from a legal page): land on that section

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useMotionPaused } from "../hooks/useMotionPause";
 import { Icon, Placeholder } from "../components/ui";
 import Leaves from "../components/Leaves";
+import { url } from "../lib/base";
 
 /* ---- Store links: replace with the live listings ---- */
 export const PLAY_STORE_URL = "#"; // e.g. https://play.google.com/store/apps/details?id=<package.id>
@@ -17,7 +18,7 @@ export function getApp(e) {
   if (store && store !== "#") return; // let the link open the store
   e?.preventDefault();
   const sec = document.getElementById("app");
-  if (!sec) { location.href = "/#app"; return; }
+  if (!sec) { location.href = url("#app"); return; }
   sec.scrollIntoView({ behavior: "smooth", block: "center" });
   history.replaceState(null, "", "#app");
   const badges = sec.querySelector(".stores");
@@ -46,12 +47,12 @@ const AUTOPLAY_MS = 3800;
 
 /* Screens exported from Figma "CarPooling_For_Student" (390×844) → public/app-screens */
 const SLIDES = [
-  { key: "home", src: "/app-screens/home.png", title: "Your day at a glance", text: "Today’s ride, who’s driving, and families nearby who can help." },
-  { key: "who", src: "/app-screens/who-is-going.png", title: "Ask for a ride in a few taps", text: "Pick who’s going, where and when. Siblings ride together." },
-  { key: "families", src: "/app-screens/families.png?v=4", title: "Families going your way", text: "Parents in your pools. Never addresses." },
-  { key: "tracking", src: "/app-screens/tracking.png", title: "Follow the ride live", text: "See pickup, the route and who’s driving, with SOS one tap away." },
-  { key: "messages", src: "/app-screens/messages.png?v=4", title: "Talk it through", text: "Message other families when plans change." },
-  { key: "started", src: "/app-screens/ride-started.png", title: "Updates as they happen", text: "A notification the moment your kids are picked up." },
+  { key: "home", src: url("app-screens/home.png"), title: "Your day at a glance", text: "Today’s ride, who’s driving, and families nearby who can help." },
+  { key: "who", src: url("app-screens/who-is-going.png"), title: "Ask for a ride in a few taps", text: "Pick who’s going, where and when. Siblings ride together." },
+  { key: "families", src: url("app-screens/families.png?v=4"), title: "Families going your way", text: "Parents in your pools. Never addresses." },
+  { key: "tracking", src: url("app-screens/tracking.png"), title: "Follow the ride live", text: "See pickup, the route and who’s driving, with SOS one tap away." },
+  { key: "messages", src: url("app-screens/messages.png?v=4"), title: "Talk it through", text: "Message other families when plans change." },
+  { key: "started", src: url("app-screens/ride-started.png"), title: "Updates as they happen", text: "A notification the moment your kids are picked up." },
 ];
 
 /* ================= Store badges ================= */

@@ -1,3 +1,4 @@
+import { url } from "../lib/base";
 /* ---------- icons (consistent 1.75 stroke line set) ---------- */
 const PATHS = {
   family: <><circle cx="8" cy="7" r="3" /><circle cx="17" cy="9" r="2.2" /><path d="M2.5 20c.6-3.4 2.8-5.5 5.5-5.5s4.9 2.1 5.5 5.5" /><path d="M14 15.2c.9-.5 1.9-.7 3-.7 2.2 0 3.9 1.6 4.5 4.5" /></>,
@@ -25,7 +26,7 @@ export const Icon = ({ name, size = 24 }) => (
 // Placeholder notes are hidden on the live page (content to confirm is tracked outside the site).
 export const Placeholder = () => null;
 export const Wordmark = ({ small }) => (
-  <a href="/#top" className={"wordmark" + (small ? " wordmark--sm" : "")} aria-label="KidPool home">
+  <a href={url("#top")} className={"wordmark" + (small ? " wordmark--sm" : "")} aria-label="KidPool home">
     <span className="wordmark__mark" aria-hidden="true"><Icon name="car" size={small ? 16 : 18} /></span>KidPool
   </a>
 );

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS } from "./Footer";
+import { url } from "../lib/base";
 
 /* ================= Legal pages: Privacy Policy + Terms & Conditions =================
    Draft content written for KidPool. Have it reviewed by a qualified lawyer before launch. */
@@ -227,8 +228,8 @@ export default function Legal({ page }) {
         <div className="container">
           <span className="accent-bar" aria-hidden="true" />
           <nav className="lg__tabs" aria-label="Policies">
-            <a href="/privacy" aria-current={page === "privacy" ? "page" : undefined} className={page === "privacy" ? "on" : ""}>Privacy Policy</a>
-            <a href="/terms" aria-current={page === "terms" ? "page" : undefined} className={page === "terms" ? "on" : ""}>Terms & Conditions</a>
+            <a href={url("privacy")} aria-current={page === "privacy" ? "page" : undefined} className={page === "privacy" ? "on" : ""}>Privacy Policy</a>
+            <a href={url("terms")} aria-current={page === "terms" ? "page" : undefined} className={page === "terms" ? "on" : ""}>Terms & Conditions</a>
           </nav>
           <h1 className="lg__title">{doc.title}</h1>
           <p className="lg__intro">{doc.intro}</p>
@@ -256,7 +257,7 @@ export default function Legal({ page }) {
               {s.body}
             </section>
           ))}
-          <a className="lg__back" href="/">← Back to KidPool</a>
+          <a className="lg__back" href={url()}>← Back to KidPool</a>
         </article>
       </div>
     </main>

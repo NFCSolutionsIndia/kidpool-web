@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Icon, Wordmark } from "../components/ui";
 import { getApp, useAppHref } from "./AppDownload";
 import JellyRadio from "../components/JellyRadio/JellyRadio";
+import { url } from "../lib/base";
 
 const LINKS = [
   { value: "top", label: "Home" },
@@ -39,7 +40,7 @@ export default function Header() {
   }, []);
 
   const go = (id) => {
-    if (!document.getElementById(id)) { location.href = `/#${id}`; return; } // on a legal page: go home to that section
+    if (!document.getElementById(id)) { location.href = url(`#${id}`); return; } // on a legal page: go home to that section
     setActive(id);
     lockUntil.current = Date.now() + 900; // let the smooth scroll finish before the spy takes over
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -75,7 +76,7 @@ export default function Header() {
         </nav>
         <nav className={"mnav" + (open ? " mnav--open" : "")} aria-label="Mobile">
           {LINKS.map(({ value, label }) => (
-            <a key={value} href={`/#${value}`} className={active === value ? "is-on" : ""} onClick={() => setOpen(false)}>
+            <a key={value} href={url(`#${value}`)} className={active === value ? "is-on" : ""} onClick={() => setOpen(false)}>
               {label}<span aria-hidden="true">→</span>
             </a>
           ))}

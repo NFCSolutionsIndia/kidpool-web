@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useActive } from "../components/Reveal";
+import { url } from "../lib/base";
 
 /* ================= 9. FAQ — 3D unfold accordion ================= */
 export const FAQS = [
@@ -23,7 +24,7 @@ export default function FAQ() {
     <section className={"section fq" + (active ? " fq--in" : "")} id="faq" ref={ref}>
       <div className="container fq__grid">
         <figure className="fq__media">
-          <img src="/illustrations/faq-walk.webp" alt="A parent and child walking hand in hand along a leafy path" loading="lazy" width="1024" height="1280" />
+          <img src={url("illustrations/faq-walk.webp")} alt="A parent and child walking hand in hand along a leafy path" loading="lazy" width="1024" height="1280" />
           <figcaption className="fq__card">
             <span className="fq__dot" aria-hidden="true" />
             <h2 className="fq__title">Questions parents ask</h2>

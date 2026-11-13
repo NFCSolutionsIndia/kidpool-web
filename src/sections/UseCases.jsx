@@ -2,21 +2,22 @@ import { useState } from "react";
 import { Icon } from "../components/ui";
 import { useActive, Words } from "../components/Reveal";
 import { getApp, useAppHref } from "./AppDownload";
+import { url } from "../lib/base";
 
 /* ================= 8. USE CASES — cinematic poster cards (flip to see how KidPool helps) ================= */
 const CASES = [
   {
-    img: "/illustrations/hero-dropoff.webp", pos: "62% 60%", icon: "repeat", front: "The regular drop-off", sub: "Same place, same time, every week.",
+    img: url("illustrations/hero-dropoff.webp"), pos: "62% 60%", icon: "repeat", front: "The regular drop-off", sub: "Same place, same time, every week.",
     back: "Share the week with a family going the same way.",
     steps: [["Mornings", "You drive"], ["Pickups", "Sam drives"], ["Every week", "Set once, it repeats"]],
   },
   {
-    img: "/illustrations/busy-evening.webp", pos: "50% 45%", icon: "calendar", front: "Busy evenings", sub: "Practice at four, a lesson at five, and only one of you.",
+    img: url("illustrations/busy-evening.webp"), pos: "50% 45%", icon: "calendar", front: "Busy evenings", sub: "Practice at four, a lesson at five, and only one of you.",
     back: "Ask families going to the same place for a seat.",
     steps: [["5:30 pm", "You ask for a seat"], ["5:32 pm", "John offers one"], ["Confirmed", "Both families agree"]],
   },
   {
-    img: "/illustrations/plans-change.webp", pos: "45% 40%", icon: "flip", front: "When plans change", sub: "A late meeting, a sick sibling, a flat tire.",
+    img: url("illustrations/plans-change.webp"), pos: "45% 40%", icon: "flip", front: "When plans change", sub: "A late meeting, a sick sibling, a flat tire.",
     back: "Post a request for today and let your pool help.",
     steps: [["Now", "You post a request"], ["+2 min", "Nearby families see it"], ["Sorted", "“I’ve got Leo!”"]],
   },
