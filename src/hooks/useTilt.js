@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { reducedMotion } from "../lib/threeKit";
+import { reducedMotion } from "../lib/brand";
 
 /* ---------- CSS 3D tilt hook ---------- */
 export function useTilt(max = 10) {

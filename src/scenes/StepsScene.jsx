@@ -204,5 +204,5 @@ export default function StepsScene({ stepRef }) {
       },
     };
   }, { shadow: true, drag: true, fov: 30 });
-  return <div className="scene scene--steps" ref={ref} />;
+  return <div className="scene scene--steps" ref={ref} role="img" aria-label="Illustration: a car drives along a night road and stops at each of the four steps: join a pool, add your children, request or offer a seat, and confirm the plan." />;
 }

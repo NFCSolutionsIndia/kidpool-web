@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
+import { useMotionPaused } from "../hooks/useMotionPause";
 import { Words } from "../components/Reveal";
-import { reducedMotion } from "../lib/threeKit";
+import { reducedMotion } from "../lib/brand";
 import { Icon } from "../components/ui";
-import StepsScene from "../scenes/StepsScene";
+import { StepsScene } from "../scenes/lazy";
 
 /* ================= 4. HOW IT WORKS — cinematic, four-scene story ================= */
 export const STEPS = [
-  { icon: "together", title: "Join your community", text: "Join the groups your family already belongs to, so you’re coordinating with families you know." },
+  { icon: "together", title: "Join a pool", text: "Join a pool for each place your kids go, so you’re coordinating with families you know." },
   { icon: "child", title: "Add your children", text: "Add each child and the activities they go to, so rides match real schedules." },
   { icon: "seat", title: "Request or offer a seat", text: "Ask for a ride when you need one, or share an empty seat when you’re already going." },
   { icon: "check", title: "Review and coordinate", text: "Check the time, route, and children, then confirm the plan with the other family." },
@@ -39,6 +40,7 @@ export default function HowItWorks() {
   const [step, setStep] = useState(0);
   const stepRef = useRef(0);
   const [auto, setAuto] = useState(!reducedMotion());
+  const [sitePaused, setSitePaused] = useMotionPaused();
   const secRef = useRef(null);
   const [inView, setInView] = useState(false);
   useEffect(() => { stepRef.current = step; }, [step]);
@@ -48,12 +50,12 @@ export default function HowItWorks() {
     return () => io.disconnect();
   }, []);
   useEffect(() => {
-    if (!auto || !inView) return;
+    if (!auto || !inView || sitePaused) return;
     const id = setTimeout(() => setStep((s) => (s + 1) % 4), SCENE_MS);
     return () => clearTimeout(id);
-  }, [auto, inView, step]);
+  }, [auto, inView, step, sitePaused]);
   const choose = (i) => { setAuto(false); setStep(i); };
-  const playing = auto && inView;
+  const playing = auto && inView && !sitePaused;
   const cur = STEPS[step];
 
   return (
@@ -105,8 +107,8 @@ export default function HowItWorks() {
           ))}
         </ol>
         <div className="cine__controls">
-          <button className="cine__play" onClick={() => setAuto(!auto)} aria-pressed={auto}>
-            {auto ? "❚❚ Pause the tour" : "▶ Play the tour"}
+          <button className="cine__play" onClick={() => { if (sitePaused) { setSitePaused(false); setAuto(true); } else setAuto(!auto); }} aria-pressed={!(auto && !sitePaused)}>
+            {auto && !sitePaused ? "❚❚ Pause the tour" : "▶ Play the tour"}
           </button>
         </div>
       </div>

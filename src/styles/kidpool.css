@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,750&family=Inter:wght@400;500;600&display=swap");
 
 :root{
   /* Replace --lime with the exact Figma colour token */
@@ -885,13 +884,13 @@ button{font:inherit;color:inherit}
              linear-gradient(20deg,var(--g-deep) 0%,var(--g-dark) 40%,var(--g-mid) 78%,var(--lime) 100%);
   padding-top:calc(51.5% + 8px)}
 @media (min-width:1000px){.feature--lime{padding-top:36px}}
-/* featured card: realistic photo (public/illustrations/kids-to-car.jpg) fitted to the box,
+/* featured card: realistic photo (public/illustrations/kids-to-car.webp) fitted to the box,
    brand-green grade on top for text contrast; falls back to the illustration if missing */
 .feature--lime{
   background:
     linear-gradient(180deg,rgba(38,45,27,.05) 0%,rgba(38,45,27,.25) 35%,rgba(30,36,22,.88) 68%,#1E2416 100%),
     linear-gradient(20deg,rgba(203,243,75,0) 55%,rgba(203,243,75,.22) 100%),
-    url("/illustrations/kids-to-car.jpg") center 30% / cover no-repeat,
+    url("/illustrations/kids-to-car.webp") center 30% / cover no-repeat,
     url("/illustrations/ride-scene.svg") center top / 100% auto no-repeat,
     linear-gradient(20deg,var(--g-deep) 0%,var(--g-dark) 40%,var(--g-mid) 78%,var(--lime) 100%)}
 @media (min-width:1000px){.feature--lime{padding-top:36px}}
@@ -903,13 +902,13 @@ button{font:inherit;color:inherit}
   background:
     linear-gradient(90deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 94%,transparent) 30%,color-mix(in srgb,var(--tint) 55%,transparent) 52%,color-mix(in srgb,var(--tint) 0%,transparent) 72%),
     linear-gradient(180deg,color-mix(in srgb,var(--tint) 35%,transparent),transparent 25%,transparent 80%,color-mix(in srgb,var(--tint) 45%,transparent)),
-    url("/illustrations/family-app.jpg") right center / cover no-repeat}
+    url("/illustrations/family-app.webp") right center / cover no-repeat}
 .pview--in .pview__photo{animation:photoIn 1.6s cubic-bezier(.16,1,.3,1) both}
 @keyframes photoIn{from{opacity:0;scale:1.06}to{opacity:1;scale:1}}
 @media (max-width:959px){
   .pview__photo{background:
     linear-gradient(180deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 92%,transparent) 45%,color-mix(in srgb,var(--tint) 30%,transparent) 75%,color-mix(in srgb,var(--tint) 60%,transparent) 100%),
-    url("/illustrations/family-app.jpg") 70% center / cover no-repeat}
+    url("/illustrations/family-app.webp") 70% center / cover no-repeat}
 }
 @media (prefers-reduced-motion:reduce){.pview--in .pview__photo{animation:none}}
 /* preview photo: two parents (one with child) framed either side of the app phone */
@@ -917,29 +916,29 @@ button{font:inherit;color:inherit}
   background:
     linear-gradient(90deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 92%,transparent) 26%,color-mix(in srgb,var(--tint) 40%,transparent) 42%,color-mix(in srgb,var(--tint) 0%,transparent) 54%),
     linear-gradient(180deg,color-mix(in srgb,var(--tint) 35%,transparent),transparent 25%,transparent 80%,color-mix(in srgb,var(--tint) 45%,transparent)),
-    url("/illustrations/two-parents-app.jpg") right 38% / 132% auto no-repeat}
+    url("/illustrations/two-parents-app.webp") right 38% / 132% auto no-repeat}
 @media (max-width:959px){
   .pview__photo{background:
     linear-gradient(180deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 92%,transparent) 45%,color-mix(in srgb,var(--tint) 30%,transparent) 75%,color-mix(in srgb,var(--tint) 60%,transparent) 100%),
-    url("/illustrations/two-parents-app.jpg") 72% center / cover no-repeat}
+    url("/illustrations/two-parents-app.webp") 72% center / cover no-repeat}
 }
 /* preview photo v3: parent+kid at the far left, solo parent at the far right; wash only behind the text column */
 .pview__photo{
   background:
     linear-gradient(90deg,color-mix(in srgb,var(--tint) 0%,transparent) 0%,color-mix(in srgb,var(--tint) 0%,transparent) 10%,color-mix(in srgb,var(--tint) 90%,transparent) 17%,color-mix(in srgb,var(--tint) 94%,transparent) 44%,color-mix(in srgb,var(--tint) 0%,transparent) 58%),
     linear-gradient(180deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 0%,transparent) 14%,color-mix(in srgb,var(--tint) 0%,transparent) 86%,var(--tint) 100%),
-    url("/illustrations/parents-edges.jpg") center center / 100% auto no-repeat}
+    url("/illustrations/parents-edges.webp") center center / 100% auto no-repeat}
 @media (max-width:959px){
   .pview__photo{background:
     linear-gradient(180deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 92%,transparent) 50%,color-mix(in srgb,var(--tint) 25%,transparent) 80%,color-mix(in srgb,var(--tint) 50%,transparent) 100%),
-    url("/illustrations/parents-edges.jpg") 0% bottom / auto 55% no-repeat}
+    url("/illustrations/parents-edges.webp") 0% bottom / auto 55% no-repeat}
 }
 /* preview photo v3b: keep the photo's own shape, centred vertically, soft top/bottom edges */
 @media (min-width:960px){
   .pview__photo{inset:auto 0 auto 0;top:50%;translate:0 -50%;aspect-ratio:1792 / 768;min-height:100%;
     background:
       linear-gradient(90deg,color-mix(in srgb,var(--tint) 0%,transparent) 0%,color-mix(in srgb,var(--tint) 0%,transparent) 8.5%,color-mix(in srgb,var(--tint) 92%,transparent) 13%,color-mix(in srgb,var(--tint) 94%,transparent) 44%,color-mix(in srgb,var(--tint) 0%,transparent) 58%),
-      url("/illustrations/parents-edges.jpg") center center / cover no-repeat;
+      url("/illustrations/parents-edges.webp") center center / cover no-repeat;
     -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 86%,transparent 100%);
     mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 86%,transparent 100%)}
   @keyframes photoIn{from{opacity:0;scale:1.04}to{opacity:1;scale:1}}
@@ -956,14 +955,14 @@ button{font:inherit;color:inherit}
   .pview__photo{
     background:
       linear-gradient(90deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 94%,transparent) 40%,color-mix(in srgb,var(--tint) 0%,transparent) 58%),
-      url("/illustrations/parent-kid-right.jpg") center center / cover no-repeat;
+      url("/illustrations/parent-kid-right.webp") center center / cover no-repeat;
     background-size:auto,100% 100%}
   .pview .preview__copy{padding-left:0}
 }
 @media (max-width:959px){
   .pview__photo{background:
     linear-gradient(180deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 92%,transparent) 50%,color-mix(in srgb,var(--tint) 25%,transparent) 80%,color-mix(in srgb,var(--tint) 50%,transparent) 100%),
-    url("/illustrations/parent-kid-right.jpg") 100% bottom / auto 55% no-repeat}
+    url("/illustrations/parent-kid-right.webp") 100% bottom / auto 55% no-repeat}
 }
 
 /* ---------- safety: light background ---------- */
@@ -1009,20 +1008,20 @@ button{font:inherit;color:inherit}
   background:
     linear-gradient(180deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.86) 22%,rgba(255,255,255,.6) 55%,rgba(255,255,255,.82) 85%,#fff 100%),
     linear-gradient(90deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 45%),
-    url("/illustrations/busy-morning.jpg") center 35% / cover no-repeat;
+    url("/illustrations/busy-morning.webp") center 35% / cover no-repeat;
   background-color:#fff}
 .feats .feature:not(.feature--lime){background:rgba(255,255,255,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .feats{
   background:
     linear-gradient(180deg,rgba(255,255,255,.93) 0%,rgba(255,255,255,.78) 20%,rgba(255,255,255,.32) 50%,rgba(255,255,255,.55) 82%,#fff 100%),
     linear-gradient(90deg,rgba(255,255,255,.5) 0%,rgba(255,255,255,0) 40%),
-    url("/illustrations/busy-morning.jpg") center 35% / cover no-repeat;
+    url("/illustrations/busy-morning.webp") center 35% / cover no-repeat;
   background-color:#fff}
 .feats .feature:not(.feature--lime){background:rgba(255,255,255,.86)}
 
 /* ---------- hero: photo texture blended into the green (colours unchanged) ---------- */
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:url("/illustrations/hero-carride.jpg") right center / cover no-repeat;
+  background:url("/illustrations/hero-carride.webp") right center / cover no-repeat;
   mix-blend-mode:soft-light;opacity:.85;
   -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.55) 35%,#000 60%),linear-gradient(180deg,#000 75%,transparent 100%);
   -webkit-mask-composite:source-in;
@@ -1396,3 +1395,119 @@ button{font:inherit;color:inherit}
 .rv--in .sft__cin{opacity:1;transform:none;transition:opacity .6s ease var(--d),transform .8s cubic-bezier(.16,1,.3,1) var(--d)}
 .rv--in .sft__cin:hover{transition-delay:0s}
 @media (prefers-reduced-motion:reduce){.rv .sft__cin{opacity:1;transform:none}}
+
+/* ================= site-wide "pause animations" (WCAG 2.2.2) ================= */
+/* paused: every animation jumps to its finished state, so entrances still reveal content but nothing moves */
+.motion-paused *, .motion-paused *::before, .motion-paused *::after{animation-duration:1ms!important;animation-delay:0s!important;animation-iteration-count:1!important}
+.pause-toggle{display:inline-flex;align-items:center;gap:6px;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;font:inherit;font-size:.82rem;font-weight:600;line-height:1;padding:6px 12px;cursor:pointer;transition:background .2s,color .2s}
+.pause-toggle span{font-size:.7rem}
+.pause-toggle:hover{background:rgba(255,255,255,.14)}
+.pause-toggle--hero{margin-left:12px;pointer-events:auto}
+.pause-toggle--footer{border-color:rgba(255,255,255,.4)}
+.cf__pause{font-size:.8rem}
+
+/* keyboard focus: always a clear outline (WCAG 2.4.7) */
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+.btn--lime:focus-visible,.store:focus-visible,.cf__arrow:focus-visible{outline-color:var(--ink);box-shadow:0 0 0 6px var(--lime)}
+
+/* screen-reader-only text (read aloud, not shown) */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* FAQ numbers: darker grey to meet 4.5:1 contrast on their light tile */
+.fq__num{color:#5c6660}
+
+/* ================= 404 page ================= */
+.ucp__ctas{margin-top:26px}
+.ucp__ghost{border-color:rgba(255,255,255,.7);color:#fff;background:transparent}
+.ucp__ghost:hover{background:#fff;color:var(--ink)}
+
+/* footer social icons */
+.sft__social{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.sft__soc{--sft-bg:#2c3a1c;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.06);color:#fff;text-decoration:none;transition:background .25s,color .25s,border-color .25s,transform .25s}
+.sft__soc svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+a.sft__soc:hover,a.sft__soc:focus-visible{--sft-bg:var(--lime);background:var(--ink);color:var(--lime);border-color:var(--lime);transform:translateY(-2px)}
+.sft__soc--soon{opacity:.75;cursor:default}
+.sft__soc--soon:hover{opacity:1}
+
+/* FAQ number tile: 38 x 38 in every state and screen size */
+.fq__num,.fq__item--on .fq__num{width:38px;height:38px;border-radius:11px;font-size:.72rem;letter-spacing:.08em;flex:none}
+@media (max-width:640px){.fq__num,.fq__item--on .fq__num{width:38px;height:38px}}
+/* FAQ question cards: tighter corners */
+.fq__item{border-radius:14px}
+.fq__num,.fq__item--on .fq__num{border-radius:8px}
+
+/* ================= footer social icons: cinematic ================= */
+.sft__socli{position:relative}
+/* entrance: fly up, spin in and come into focus, one after another */
+.rv .sft__socli{opacity:0}
+.rv--in .sft__socli{animation:socIn 1s cubic-bezier(.2,1.35,.4,1) both;animation-delay:var(--d)}
+@keyframes socIn{0%{opacity:0;transform:translateY(28px) scale(.35) rotate(-30deg);filter:blur(6px)}55%{opacity:1;filter:blur(0)}100%{opacity:1;transform:none;filter:none}}
+/* a lime ring bursts out as each icon lands */
+.sft__socli::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid var(--lime);opacity:0;pointer-events:none}
+.rv--in .sft__socli::after{animation:socRing .9s ease-out both;animation-delay:calc(var(--d) + .35s)}
+@keyframes socRing{0%{opacity:.85;transform:scale(.7)}100%{opacity:0;transform:scale(1.7)}}
+/* idle: a light sweep glints across the row in a wave every few seconds */
+.sft__soc{position:relative;overflow:hidden;isolation:isolate}
+.sft__soc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.42) 50%,transparent 70%);transform:translateX(-130%)}
+.rv--in .sft__soc::before{animation:socSheen 7s ease-in-out infinite;animation-delay:calc(2.4s + var(--i) * .18s)}
+@keyframes socSheen{0%,72%{transform:translateX(-130%)}86%,100%{transform:translateX(130%)}}
+/* hover: lift, fill lime, tilt the mark, glow */
+.sft__soc{transition:transform .35s cubic-bezier(.3,1.5,.5,1),background .3s,color .3s,border-color .3s,box-shadow .35s}
+.sft__soc svg{transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.sft__soc:hover,a.sft__soc:focus-visible{--sft-bg:var(--lime);background:var(--lime);color:var(--ink);border-color:var(--lime);opacity:1;transform:translateY(-4px) scale(1.08);box-shadow:0 12px 26px -8px rgba(203,243,75,.75)}
+.sft__soc:hover svg,a.sft__soc:focus-visible svg{transform:rotate(-10deg) scale(1.08)}
+@media (prefers-reduced-motion:reduce){
+  .rv .sft__socli{opacity:1}.rv--in .sft__socli,.rv--in .sft__socli::after,.rv--in .sft__soc::before{animation:none}
+  .sft__soc:hover{transform:none}.sft__soc:hover svg{transform:none}
+}
+.sft__soc,.sft__soc--soon{cursor:pointer}
+
+/* ================= social icon tooltip ================= */
+.sft__tip{position:absolute;left:50%;bottom:calc(100% + 14px);z-index:6;display:flex;align-items:center;gap:9px;white-space:nowrap;
+  padding:8px 9px 8px 12px;border-radius:14px;background:rgba(20,23,26,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border:1px solid rgba(203,243,75,.4);box-shadow:0 18px 34px -12px rgba(0,0,0,.65),0 0 0 5px rgba(203,243,75,.08),0 0 26px -6px rgba(203,243,75,.45);
+  color:#fff;font-size:.82rem;line-height:1;pointer-events:none;opacity:0;filter:blur(4px);
+  transform:translate(-50%,10px) scale(.82);transform-origin:50% 100%;
+  transition:opacity .22s ease,filter .3s ease,transform .45s cubic-bezier(.3,1.7,.45,1)}
+/* pointer arrow */
+.sft__tip::after{content:"";position:absolute;left:50%;top:100%;width:12px;height:12px;margin:-6px 0 0 -6px;background:rgba(20,23,26,.95);
+  border-right:1px solid rgba(203,243,75,.4);border-bottom:1px solid rgba(203,243,75,.4);transform:rotate(45deg);border-bottom-right-radius:3px}
+/* pulsing lime dot + name */
+.sft__tip b{display:inline-flex;align-items:center;gap:8px;font-weight:650;letter-spacing:.01em}
+.sft__tip b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(203,243,75,.7)}
+.sft__socli:hover .sft__tip b::before,.sft__socli:focus-within .sft__tip b::before{animation:tipPulse 1.4s ease-out infinite}
+@keyframes tipPulse{0%{box-shadow:0 0 0 0 rgba(203,243,75,.7)}100%{box-shadow:0 0 0 8px rgba(203,243,75,0)}}
+/* status badge */
+.sft__tip em{font-style:normal;font-size:.64rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--lime);padding:5px 8px;border-radius:999px}
+/* show */
+.sft__socli:hover .sft__tip,.sft__socli:focus-within .sft__tip{opacity:1;filter:none;transform:translate(-50%,0) scale(1)}
+/* first icon: keep the tooltip inside the screen edge on phones */
+.sft__socli:first-child .sft__tip{left:-4px;transform:translate(0,10px) scale(.82);transform-origin:20px 100%}
+.sft__socli:first-child:hover .sft__tip,.sft__socli:first-child:focus-within .sft__tip{transform:translate(0,0) scale(1)}
+.sft__socli:first-child .sft__tip::after{left:25px}
+.sft__soc--soon:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.sft__tip{transition:opacity .15s;filter:none}.sft__socli:hover .sft__tip b::before{animation:none}}
+
+/* ================= cinematic buttons ================= */
+.btn,.store,.cin__app{position:relative;overflow:hidden;isolation:isolate}
+/* light sweep: idle glint on lime buttons, fast sweep on hover for every button */
+.btn::before,.store::before,.cin__app::before{content:"";position:absolute;inset:-2px;z-index:-1;pointer-events:none;
+  background:linear-gradient(110deg,transparent 28%,rgba(255,255,255,.55) 46%,rgba(255,255,255,.1) 54%,transparent 66%);transform:translateX(-120%)}
+.btn--lime::before,.cin__app::before{animation:btnGlint 6.5s cubic-bezier(.4,0,.2,1) 3s infinite}
+@keyframes btnGlint{0%,78%{transform:translateX(-120%)}94%,100%{transform:translateX(120%)}}
+.btn:hover::before,.store:hover::before,.cin__app:hover::before{animation:btnSweep .75s cubic-bezier(.4,0,.2,1) both}
+@keyframes btnSweep{from{transform:translateX(-120%)}to{transform:translateX(120%)}}
+.btn--ink::before,.store::before{background:linear-gradient(110deg,transparent 28%,rgba(203,243,75,.35) 46%,transparent 64%)}
+/* hover: lift + lime glow */
+.btn--lime:hover{box-shadow:0 8px 0 -2px rgba(20,23,26,.9),inset 0 -3px 0 rgba(20,23,26,.12),0 14px 34px -6px rgba(203,243,75,.75)}
+.btn--ghost:hover,.btn--ink:hover,.store:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(20,23,26,.45),0 0 22px -6px rgba(203,243,75,.55)}
+.store{transition:transform .25s ease,box-shadow .25s ease}
+/* header call to action: slow breathing glow */
+.header__actions .btn--lime{animation:btnBreathe 3.4s ease-in-out infinite}
+@keyframes btnBreathe{0%,100%{box-shadow:0 1px 0 rgba(20,23,26,.25),inset 0 -3px 0 rgba(20,23,26,.12),0 0 0 0 rgba(203,243,75,0)}50%{box-shadow:0 1px 0 rgba(20,23,26,.25),inset 0 -3px 0 rgba(20,23,26,.12),0 0 26px 2px rgba(203,243,75,.55)}}
+.header__actions .btn--lime:hover{animation:none}
+/* click ripple (added by src/lib/ripple.js) */
+.btn-ripple{position:absolute;z-index:-1;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,255,255,.55) 0%,rgba(255,255,255,.25) 35%,rgba(255,255,255,0) 65%);transform:scale(0);animation:btnRipple .65s cubic-bezier(.2,.8,.2,1) forwards}
+.btn--lime .btn-ripple,.cin__app .btn-ripple{background:radial-gradient(circle,rgba(20,23,26,.22) 0%,rgba(20,23,26,.08) 35%,rgba(20,23,26,0) 65%)}
+@keyframes btnRipple{to{transform:scale(1);opacity:0}}
+.cine__play,.pause-toggle{position:relative;overflow:hidden;isolation:isolate}
+@media (prefers-reduced-motion:reduce){.btn::before,.store::before,.cin__app::before,.header__actions .btn--lime{animation:none!important}}

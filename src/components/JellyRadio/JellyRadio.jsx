@@ -1,6 +1,8 @@
 'use client';
 
-import { forwardRef, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { forwardRef, useEffect, useLayoutEffect as useLayoutEffectRaw, useRef, useState } from 'react';
+// layout effect in the browser, plain effect during build-time pre-rendering (no SSR warning)
+const useLayoutEffect = typeof window !== 'undefined' ? useLayoutEffectRaw : useEffect;
 import { animate, motion, motionValue, useReducedMotion, useTransform } from 'motion/react';
 
 import './JellyRadio.css';

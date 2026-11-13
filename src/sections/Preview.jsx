@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { C, reducedMotion } from "../lib/threeKit";
+import { C, reducedMotion } from "../lib/brand";
 import { Icon } from "../components/ui";
 import { useActive, Words } from "../components/Reveal";
 
 
 /* ================= 6. PRODUCT PREVIEW — 3D phone ================= */
 const STATES = [
-  { label: "Requested", pill: "Looking for a seat", line: "Your request is visible to families in your community.", action: "Simulate an offer" },
+  { label: "Requested", pill: "Looking for a seat", line: "Your request is visible to families in your pool.", action: "Simulate an offer" },
   { label: "Seat offered", pill: "Seat offered", line: "Sam Okafor can take Maya and Leo at 7:45 AM.", action: "Accept the seat" },
   { label: "Confirmed", pill: "Confirmed", line: "Pickup with Sam at 7:45 AM. Both families agreed.", action: "Start again" },
 ];

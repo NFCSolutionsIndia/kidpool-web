@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import Trust from "./sections/Trust";
@@ -11,25 +11,41 @@ import AppDownload from "./sections/AppDownload";
 import FAQ from "./sections/FAQ";
 import Footer from "./sections/Footer";
 import Legal from "./sections/Legal";
+import NotFound from "./sections/NotFound";
 
-/* "#/privacy" and "#/terms" open the legal pages; every other hash is a section of the home page */
-const routeOf = () => (location.hash === "#/privacy" ? "privacy" : location.hash === "#/terms" ? "terms" : "home");
+/* Real URLs, each pre-rendered at build time so search engines can index them:
+   /, /privacy and /terms; anything else is the 404 page. */
+export const routeOf = (path = "/") => {
+  const p = path.replace(/\/+$/, "") || "/";
+  if (p === "/" || p === "/index.html") return "home";
+  if (p === "/privacy" || p === "/terms") return p.slice(1);
+  return "notfound";
+};
 
-export default function App() {
-  const [route, setRoute] = useState(routeOf);
+export default function App({ path }) {
+  const route = routeOf(path ?? (typeof location !== "undefined" ? location.pathname : "/"));
+
   useEffect(() => {
-    const onHash = () => setRoute(routeOf());
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
-  }, []);
-  // coming back from a legal page: land on the section the link pointed to
-  useEffect(() => {
-    if (route !== "home") return;
+    // old links used "#/privacy" and "#/terms": send them to the real pages
+    if (location.hash === "#/privacy" || location.hash === "#/terms") {
+      location.replace(location.hash.slice(1));
+      return;
+    }
+    // arriving at "/#section" (e.g. from a legal page): land on that section
     const id = location.hash.slice(1);
-    if (!id || id.startsWith("/")) return;
-    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: "start" }));
+    if (route === "home" && id) requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: "start", behavior: "instant" }));
   }, [route]);
 
+  if (route === "notfound") {
+    return (
+      <>
+        <a href="#main" className="skip">Skip to content</a>
+        <Header />
+        <NotFound />
+        <Footer />
+      </>
+    );
+  }
   if (route !== "home") {
     return (
       <>

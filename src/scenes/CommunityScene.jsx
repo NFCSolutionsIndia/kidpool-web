@@ -79,5 +79,5 @@ export default function CommunityScene({ modeRef, activeRef }) {
       },
     };
   }, { drag: true });
-  return <div className="scene scene--community" ref={ref} />;
+  return <div className="scene scene--community" ref={ref} role="img" aria-label="Illustration: families in your pool shown as points around a sphere; the single-ride view highlights the two families sharing a ride." />;
 }

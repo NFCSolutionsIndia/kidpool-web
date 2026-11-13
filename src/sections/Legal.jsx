@@ -18,7 +18,7 @@ const PRIVACY = [
   {
     id: "overview", title: "Overview",
     body: <>
-      <p>KidPool (“KidPool”, “we”, “us”) helps parents and guardians coordinate their kids’ rides with other families from their own communities. This Privacy Policy explains what information we collect when you use the KidPool website and mobile apps (the “Service”), how we use it, who can see it, and the choices you have.</p>
+      <p>KidPool (“KidPool”, “we”, “us”) helps parents and guardians coordinate their kids’ rides with other families in their own pools. This Privacy Policy explains what information we collect when you use the KidPool website and mobile apps (the “Service”), how we use it, who can see it, and the choices you have.</p>
       <p>We designed KidPool around a simple principle: <strong>your family’s information is shared only with the families you choose to coordinate with, and only as much as a ride needs.</strong> We do not sell your personal information.</p>
     </>,
   },
@@ -32,7 +32,7 @@ const PRIVACY = [
         <li><strong>Places:</strong> your home location and the venues you add. Other families see only a rough distance, never your exact address.</li>
         <li><strong>Rides:</strong> the requests and offers you create, including times, pickup and drop-off points, and which children are riding.</li>
         <li><strong>Messages and calls:</strong> messages you send to other families in the app, and in-app call records. Phone numbers are kept private.</li>
-        <li><strong>Driver verification:</strong> if you offer rides, a photo of your ID or driver’s licence that you choose to upload.</li>
+        <li><strong>Driver verification:</strong> if you offer rides, a photo of your ID or driver’s license that you choose to upload.</li>
         <li><strong>Support and feedback:</strong> anything you send us when you contact us.</li>
       </ul>
       <h4>Information collected automatically</h4>
@@ -46,11 +46,11 @@ const PRIVACY = [
   {
     id: "use", title: "How we use your information",
     body: <ul>
-      <li>To create and manage your account and your community memberships.</li>
+      <li>To create and manage your account and your pool memberships.</li>
       <li>To show you families going to the same places, and to send, match and confirm ride requests and offers.</li>
       <li>To provide ride features such as live tracking, QR check-in at pickup and drop-off, running-late alerts, SOS and notifications.</li>
       <li>To let you message and call other families without sharing phone numbers.</li>
-      <li>To verify drivers who choose to upload ID, and to help keep the community safe, including investigating reports and blocking misuse.</li>
+      <li>To verify drivers who choose to upload ID, and to help keep pools safe, including investigating reports and blocking misuse.</li>
       <li>To provide support, send service messages, and improve and secure the Service.</li>
       <li>To comply with the law and enforce our Terms & Conditions.</li>
     </ul>,
@@ -59,13 +59,13 @@ const PRIVACY = [
     id: "share", title: "Who can see your information",
     body: <>
       <ul>
-        <li><strong>Families in your community:</strong> families in the same community group can see your first name, your children’s first names, the places you share in common and a rough distance. They never see your exact address or phone number.</li>
+        <li><strong>Families in your pool:</strong> families in the same pool can see your first name, your children’s first names, the places you share in common and a rough distance. They never see your exact address or phone number.</li>
         <li><strong>Families on a ride:</strong> when two families agree on a ride, both can see the details that ride needs: time, pickup and drop-off points, the children riding, the driver’s name and vehicle description, and live location while the ride is in progress.</li>
         <li><strong>Service providers:</strong> companies that host our servers, send notifications and messages, provide maps, or help with support and analytics, under contracts that limit how they can use your data.</li>
         <li><strong>Legal and safety reasons:</strong> when required by law, or when we believe in good faith it is needed to protect someone’s safety, investigate fraud or misuse, or defend our legal rights.</li>
         <li><strong>Business changes:</strong> if KidPool is involved in a merger, acquisition or sale of assets, your information may be transferred, and this policy will continue to apply.</li>
       </ul>
-      <p><strong>We do not sell your personal information or share it for cross-context behavioural advertising.</strong></p>
+      <p><strong>We do not sell your personal information or share it for cross-context behavioral advertising.</strong></p>
     </>,
   },
   {
@@ -114,16 +114,16 @@ const TERMS = [
   {
     id: "what", title: "What KidPool is, and isn’t",
     body: <>
-      <p>KidPool is a coordination tool. It helps parents and guardians in the same community find each other, ask for and offer rides, and agree on the details together.</p>
+      <p>KidPool is a coordination tool. It helps parents and guardians in the same pool (a group of families from the same school, team, club or other group) find each other, ask for and offer rides, and agree on the details together.</p>
       <p><strong>KidPool is not a transportation provider, taxi or ride-hailing service.</strong> We do not employ drivers, provide vehicles or transport anyone. Rides are arranged directly between families, who decide for themselves whether to request, offer or accept a ride. Rides arranged through KidPool must not be offered for payment or profit.</p>
     </>,
   },
   {
     id: "eligibility", title: "Who can use KidPool",
     body: <ul>
-      <li>You must be at least 18 years old and a parent or legal guardian, or be authorised by one, for any child you add.</li>
+      <li>You must be at least 18 years old and a parent or legal guardian, or be authorized by one, for any child you add.</li>
       <li>You must provide accurate information and keep it up to date.</li>
-      <li>You may join only the community groups you genuinely belong to.</li>
+      <li>You may join only the pools you genuinely belong to.</li>
       <li>You are responsible for keeping your account secure and for activity on your account.</li>
     </ul>,
   },
@@ -132,7 +132,7 @@ const TERMS = [
     body: <>
       <p>If you offer or give a ride, you confirm and agree that you:</p>
       <ul>
-        <li>hold a valid driver’s licence and drive a vehicle that is registered, roadworthy and covered by insurance as required by law;</li>
+        <li>hold a valid driver’s license and drive a vehicle that is registered, roadworthy and covered by insurance as required by law;</li>
         <li>will follow all traffic laws, and all child passenger safety laws, including appropriate car seats, booster seats and seat belts for each child;</li>
         <li>will not drive while impaired, distracted or using your phone in a way the law does not allow;</li>
         <li>will check your own insurance cover for carpooling, which remains your responsibility.</li>
@@ -148,23 +148,23 @@ const TERMS = [
     body: <p>KidPool offers features such as private phone numbers, live ride tracking, check-ins, running-late alerts, SOS, driver ID upload and block-and-report tools. These features help families coordinate, but they do not guarantee anyone’s identity, conduct or safety, and KidPool does not run background checks unless we clearly say so. In an emergency, always call 911 or your local emergency number.</p>,
   },
   {
-    id: "conduct", title: "Community rules",
+    id: "conduct", title: "Pool rules",
     body: <>
       <p>To keep KidPool safe and friendly, you agree not to:</p>
       <ul>
         <li>harass, threaten, discriminate against or harm anyone, or share inappropriate content;</li>
-        <li>impersonate anyone, create fake accounts or join communities you don’t belong to;</li>
+        <li>impersonate anyone, create fake accounts or join pools you don’t belong to;</li>
         <li>offer rides for money or use the Service for any commercial purpose;</li>
         <li>collect other families’ information or contact them outside the purpose of arranging rides;</li>
         <li>misuse the SOS, reporting or messaging features;</li>
-        <li>interfere with, copy, reverse-engineer or attempt to gain unauthorised access to the Service.</li>
+        <li>interfere with, copy, reverse-engineer or attempt to gain unauthorized access to the Service.</li>
       </ul>
       <p>You can block or report anyone at any time. We may review reports and take action, including removing content or suspending accounts.</p>
     </>,
   },
   {
     id: "content", title: "Your content",
-    body: <p>You keep ownership of the content you add, such as messages and ride details. You give KidPool a limited licence to store, display and process that content only to operate and improve the Service. You are responsible for the content you share and must have the right to share it.</p>,
+    body: <p>You keep ownership of the content you add, such as messages and ride details. You give KidPool a limited license to store, display and process that content only to operate and improve the Service. You are responsible for the content you share and must have the right to share it.</p>,
   },
   {
     id: "termination", title: "Suspension and termination",
@@ -198,7 +198,7 @@ const TERMS = [
 
 const PAGES = {
   privacy: { title: "Privacy Policy", intro: "How KidPool collects, uses and protects your family’s information.", sections: PRIVACY },
-  terms: { title: "Terms & Conditions", intro: "The rules for using KidPool to coordinate rides with families in your community.", sections: TERMS },
+  terms: { title: "Terms & Conditions", intro: "The rules for using KidPool to coordinate rides with families in your pool.", sections: TERMS },
 };
 
 export default function Legal({ page }) {
@@ -226,13 +226,13 @@ export default function Legal({ page }) {
       <section className="lg__hero">
         <div className="container">
           <span className="accent-bar" aria-hidden="true" />
-          <div className="lg__tabs" role="tablist" aria-label="Legal pages">
-            <a href="#/privacy" role="tab" aria-selected={page === "privacy"} className={page === "privacy" ? "on" : ""}>Privacy Policy</a>
-            <a href="#/terms" role="tab" aria-selected={page === "terms"} className={page === "terms" ? "on" : ""}>Terms & Conditions</a>
-          </div>
+          <nav className="lg__tabs" aria-label="Policies">
+            <a href="/privacy" aria-current={page === "privacy" ? "page" : undefined} className={page === "privacy" ? "on" : ""}>Privacy Policy</a>
+            <a href="/terms" aria-current={page === "terms" ? "page" : undefined} className={page === "terms" ? "on" : ""}>Terms & Conditions</a>
+          </nav>
           <h1 className="lg__title">{doc.title}</h1>
           <p className="lg__intro">{doc.intro}</p>
-          <p className="lg__date">Effective date: {EFFECTIVE_DATE}</p>
+          <p className="lg__date">{doc.dateLabel || "Effective date"}: {EFFECTIVE_DATE}</p>
         </div>
       </section>
 
@@ -256,7 +256,7 @@ export default function Legal({ page }) {
               {s.body}
             </section>
           ))}
-          <a className="lg__back" href="#top">← Back to KidPool</a>
+          <a className="lg__back" href="/">← Back to KidPool</a>
         </article>
       </div>
     </main>

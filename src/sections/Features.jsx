@@ -1,6 +1,6 @@
 import { useTilt } from "../hooks/useTilt";
 import { Icon, Placeholder } from "../components/ui";
-import { getApp, appHref } from "./AppDownload";
+import { getApp, useAppHref } from "./AppDownload";
 import Leaves from "../components/Leaves";
 import { useActive, Words } from "../components/Reveal";
 
@@ -54,6 +54,7 @@ const ArtChat = () => (
 
 /* ================= 5. FEATURES — tilt cards with depth ================= */
 function Feature({ icon, title, text, tag, featured, art: Art, i }) {
+  const appStore = useAppHref();
   const ref = useTilt(8);
   return (
     <article className={"feature" + (featured ? " feature--lime" : "")} ref={ref} style={{ "--c": i }}>
@@ -62,7 +63,7 @@ function Feature({ icon, title, text, tag, featured, art: Art, i }) {
       <span className="feature__icon"><Icon name={icon} size={featured ? 30 : 24} /></span>
       <h3 className="feature__title"><span className="ft-mask"><span className="ft">{title}</span></span></h3>
       <p className="feature__text">{text}</p>
-      {featured && <a href={appHref()} onClick={getApp} className="btn btn--ink btn--sm feature__cta">Get the app</a>}
+      {featured && <a href={appStore} onClick={getApp} className="btn btn--ink btn--sm feature__cta">Get the app</a>}
       {tag && <Placeholder>{tag}</Placeholder>}
     </article>
   );
@@ -79,7 +80,7 @@ export default function Features() {
           <p className="lede rv-up" style={{ "--d": ".6s" }}>The morning drop-off, the evening lesson, and the pickup that clashes with both.</p>
         </div>
         <div className="features">
-          <Feature i={0} featured icon="car" title="Request or offer rides" text="Post a ride you need, or share a seat on a trip you’re already making. Families in your community can respond." />
+          <Feature i={0} featured icon="car" title="Request or offer rides" text="Post a ride you need, or share a seat on a trip you’re already making. Families in your pool can respond." />
           <Feature i={1} art={ArtKids} icon="child" title="More than one child" text="Keep each child’s places, schedules, and rides together." />
           <Feature i={2} art={ArtCalendar} icon="calendar" title="Activity schedules" text="See every practice, lesson, and pickup in one week view." />
           <Feature i={3} art={ArtRepeat} icon="repeat" title="Recurring rides" text="Set up a regular ride once instead of arranging it every week." tag="Confirm: recurring rides supported" />

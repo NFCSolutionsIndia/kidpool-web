@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { reducedMotion } from "../lib/threeKit";
+import { motionPaused } from "./useMotionPause";
 
 /* ---------- reusable three.js hook ----------
    Creates one renderer per section, pauses when off screen, follows the pointer,
@@ -25,12 +26,14 @@ export function useThree(setup, opts = {}) {
     const p = { x: 0, y: 0, tx: 0, ty: 0, drag: 0, dragV: 0 };
     const api = setup({ scene, camera, renderer, el }) || {};
 
+    let pausedFrames = 0; // frames drawn while the site-wide pause is on
     const resize = () => {
       const w = el.clientWidth, h = el.clientHeight;
       if (!w || !h) return;
       renderer.setSize(w, h, false);
       camera.aspect = w / h; camera.updateProjectionMatrix();
       api.onResize && api.onResize(w, h, camera);
+      pausedFrames = 0; // a resize clears the canvas: redraw the settled frame even while paused
     };
     resize();
     const ro = new ResizeObserver(resize); ro.observe(el);
@@ -38,8 +41,14 @@ export function useThree(setup, opts = {}) {
     let raf = 0, last = performance.now(), t = 0;
     const frame = (now) => {
       raf = requestAnimationFrame(frame);
-      const dt = Math.min((now - last) / 1000, 0.05); last = now;
-      if (!reduced) t += dt;
+      // site-wide pause: the scene clock stops, but the entrance still finishes (~3 s of frames),
+      // then the last frame is held so the picture stays visible and still
+      const paused = motionPaused();
+      if (paused && ++pausedFrames > 180) { last = now; return; }
+      if (!paused) pausedFrames = 0;
+      // while paused, big steps finish the entrance in a dozen frames (works even on slow devices)
+      const dt = paused ? 0.25 : Math.min((now - last) / 1000, 0.05); last = now;
+      if (!reduced && !paused) t += dt;
       p.x += (p.tx - p.x) * 0.06; p.y += (p.ty - p.y) * 0.06;
       if (!dragging) { p.drag += p.dragV; p.dragV *= 0.92; }
       api.update && api.update(t, dt, p);

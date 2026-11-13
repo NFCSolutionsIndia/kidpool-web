@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useMotionPaused } from "../hooks/useMotionPause";
 import { Icon, Placeholder } from "../components/ui";
 import Leaves from "../components/Leaves";
 
@@ -16,7 +17,7 @@ export function getApp(e) {
   if (store && store !== "#") return; // let the link open the store
   e?.preventDefault();
   const sec = document.getElementById("app");
-  if (!sec) { location.hash = "app"; return; }
+  if (!sec) { location.href = "/#app"; return; }
   sec.scrollIntoView({ behavior: "smooth", block: "center" });
   history.replaceState(null, "", "#app");
   const badges = sec.querySelector(".stores");
@@ -25,6 +26,12 @@ export function getApp(e) {
     setTimeout(() => badges.classList.add("stores--flash"), 650);
     setTimeout(() => badges.classList.remove("stores--flash"), 2600);
   }
+}
+/* the same, as a hook: "#app" in the pre-rendered HTML, then the right store once on a phone */
+export function useAppHref() {
+  const [href, setHref] = useState("#app");
+  useEffect(() => { setHref(appHref()); }, []);
+  return href;
 }
 /* href for the buttons: the right store on phones, the app section otherwise */
 export function appHref() {
@@ -41,7 +48,7 @@ const AUTOPLAY_MS = 3800;
 const SLIDES = [
   { key: "home", src: "/app-screens/home.png", title: "Your day at a glance", text: "Today’s ride, who’s driving, and families nearby who can help." },
   { key: "who", src: "/app-screens/who-is-going.png", title: "Ask for a ride in a few taps", text: "Pick who’s going, where and when. Siblings ride together." },
-  { key: "families", src: "/app-screens/families.png?v=4", title: "Families going your way", text: "Parents from your own communities. Never addresses." },
+  { key: "families", src: "/app-screens/families.png?v=4", title: "Families going your way", text: "Parents in your pools. Never addresses." },
   { key: "tracking", src: "/app-screens/tracking.png", title: "Follow the ride live", text: "See pickup, the route and who’s driving, with SOS one tap away." },
   { key: "messages", src: "/app-screens/messages.png?v=4", title: "Talk it through", text: "Message other families when plans change." },
   { key: "started", src: "/app-screens/ride-started.png", title: "Updates as they happen", text: "A notification the moment your kids are picked up." },
@@ -87,6 +94,8 @@ export default function AppDownload() {
   const n = SLIDES.length;
   const [idx, setIdx] = useState(0);
   const [hover, setHover] = useState(false);
+  const [userPaused, setUserPaused] = useState(false);
+  const [sitePaused, setSitePaused] = useMotionPaused();
   const [inView, setInView] = useState(false);
   const [copyIn, setCopyIn] = useState(false);
   const copyRef = useRef(null);
@@ -95,7 +104,7 @@ export default function AppDownload() {
   const drag = useRef({ x: 0, dx: 0, on: false });
   const reduce = typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
   const dragging = dragX !== 0;
-  const running = !hover && !dragging && inView && !reduce;
+  const running = !hover && !dragging && inView && !reduce && !userPaused && !sitePaused;
 
   const go = useCallback((d) => setIdx((v) => (v + d + n) % n), [n]);
 
@@ -154,7 +163,7 @@ export default function AppDownload() {
 
           <div className={"appdl__copy" + (copyIn ? " appdl__copy--in" : "")} ref={copyRef}>
             <span className="accent-bar" aria-hidden="true" />
-            <p className="appdl__kicker" aria-label="KidPool for Android and iPhone">
+            <p className="appdl__kicker"><span className="sr-only">KidPool for Android and iPhone</span>
               {"KidPool for Android & iPhone".split("").map((ch, i) => (
                 <span key={i} aria-hidden="true" style={{ "--i": i }}>{ch === " " ? "\u00A0" : ch}</span>
               ))}
@@ -174,7 +183,7 @@ export default function AppDownload() {
             <div className="appdl__reveal appdl__reveal--pop" style={{ "--d": "1.25s" }}><StoreBadges /></div>
             {!LINKS_READY && <div className="appdl__reveal" style={{ "--d": "1.4s" }}><Placeholder>Add the live Google Play and App Store links</Placeholder></div>}
             <ul className="appdl__ticks">
-              {["Live ride tracking and pickup alerts", "Only families from your own communities", "Available for Android and iPhone"].map((t, i) => (
+              {["Live ride tracking and pickup alerts", "Only families from your own pools", "Available for Android and iPhone"].map((t, i) => (
                 <li key={t} style={{ "--i": i }}><Icon name="check" size={16} />{t}</li>
               ))}
             </ul>
@@ -257,6 +266,7 @@ export default function AppDownload() {
                 ))}
               </div>
               <button className="cf__arrow" onClick={() => go(1)} aria-label="Next screen">→</button>
+              <button className="cf__arrow cf__pause" onClick={() => { if (sitePaused) { setSitePaused(false); setUserPaused(false); } else setUserPaused((v) => !v); }} aria-pressed={userPaused || sitePaused} aria-label={userPaused || sitePaused ? "Play the screen slideshow" : "Pause the screen slideshow"}>{userPaused || sitePaused ? "▶" : "❚❚"}</button>
             </div>
           </div>
         </div>

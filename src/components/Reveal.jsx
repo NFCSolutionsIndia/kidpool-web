@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from "react";
 
 /* true while the element is "active" (inside the middle band of the viewport).
    Flips back to false when it leaves, so entrance animations replay each visit. */
-export function useActive(margin = "-12% 0px -12% 0px") {
+/* `initial`: start active (used for the hero, which is on screen at load, so its entrance
+   plays from CSS as soon as the pre-rendered page paints, before any JavaScript runs). */
+export function useActive(margin = "-12% 0px -12% 0px", initial = false) {
   const ref = useRef(null);
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(initial);
   useEffect(() => {
     const el = ref.current;
     if (!el || typeof IntersectionObserver === "undefined") { setActive(true); return; }

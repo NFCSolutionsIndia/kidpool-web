@@ -297,5 +297,5 @@ export default function HeroScene({ activeRef }) {
       },
     };
   }, { shadow: true, drag: true });
-  return <div className="scene scene--hero" ref={ref} />;
+  return <div className="scene scene--hero" ref={ref} role="img" aria-label="Illustration: a neighborhood loop where one car picks kids up at their homes and drops them at a sports center, a music hall and a school, while a second car brings kids back home." />;
 }

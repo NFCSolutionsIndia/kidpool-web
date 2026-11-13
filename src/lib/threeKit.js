@@ -6,15 +6,9 @@ export const NEW_LIGHTS = parseInt(THREE.REVISION, 10) >= 155;
 export const LI = (v) => (NEW_LIGHTS ? v * Math.PI : v);
 if (THREE.ColorManagement) THREE.ColorManagement.enabled = false;
 
-/* ---------- brand tokens used inside 3D ---------- */
-export const C = {
-  lime: 0xcbf34b, ink: 0x14171a, white: 0xffffff, pale: 0xf4fae6,
-  sky: 0xe4f5b8, road: 0xd8dccf, gray: 0xd5dbe0, mid: 0x9aa7b2, tree: 0xd9f58a,
-};
-
-export const reducedMotion = () =>
-  typeof window !== "undefined" && window.matchMedia &&
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* ---------- brand tokens used inside 3D (defined in brand.js, re-exported here) ---------- */
+import { C, reducedMotion } from "./brand";
+export { C, reducedMotion };
 
 /* ---------- geometry helpers ---------- */
 export function rrShape(w, h, r) {

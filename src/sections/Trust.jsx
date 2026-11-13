@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
+import { useMotionPaused } from "../hooks/useMotionPause";
 import { useTilt } from "../hooks/useTilt";
 import { Icon } from "../components/ui";
 import { useActive } from "../components/Reveal";
-import { reducedMotion } from "../lib/threeKit";
+import { reducedMotion } from "../lib/brand";
 
 const ITEMS = [
   { icon: "family", title: "Made for families", text: "For parents and guardians arranging rides for their own children." },
-  { icon: "together", title: "Coordinate together", text: "Plan rides with families from your own communities." },
+  { icon: "together", title: "Coordinate together", text: "Plan rides with the families in your pool." },
   { icon: "control", title: "Stay in control", text: "You decide which rides to request, offer, or accept." },
 ];
 const SPOT_MS = 2800;
@@ -26,13 +27,15 @@ function TrustItem({ icon, title, text, i, focus }) {
         <span className="tile3d__base" /><span className="tile3d__icon"><Icon name={icon} size={26} /></span>
       </span>
       <span className="trust__copy">
-        <strong className="trust__title" aria-label={title}>
+        <strong className="trust__title">
+          <span className="sr-only">{title}</span>
           <span aria-hidden="true">{title.split(" ").map((w, k) => (
             <span className="tw-mask" key={k}><span className="tw" style={{ "--w": k }}>{w}</span></span>
           ))}</span>
           <span className="trust__underline" aria-hidden="true" />
         </strong>
-        <span className="muted trust__text" aria-label={text}>
+        <span className="muted trust__text">
+          <span className="sr-only">{text}</span>
           <span aria-hidden="true">{split(text, "tx")}</span>
         </span>
       </span>
@@ -43,9 +46,10 @@ function TrustItem({ icon, title, text, i, focus }) {
 export default function Trust() {
   const [ref, active] = useActive("0px 0px -8% 0px");
   const [spot, setSpot] = useState(-1);
+  const [sitePaused] = useMotionPaused();
   // spotlight cycles through the items while the strip is active
   useEffect(() => {
-    if (!active || reducedMotion()) { setSpot(-1); return; }
+    if (!active || reducedMotion() || sitePaused) { setSpot(-1); return; }
     let i = -1;
     const start = setTimeout(function tick() {
       i = (i + 1) % ITEMS.length; setSpot(i);
@@ -53,7 +57,7 @@ export default function Trust() {
     }, 2200); // after the entrance finishes
     let t2;
     return () => { clearTimeout(start); clearTimeout(t2); };
-  }, [active]);
+  }, [active, sitePaused]);
 
   return (
     <section className={"trust" + (active ? " trust--in" : "")} aria-label="Who KidPool is for" ref={ref}>

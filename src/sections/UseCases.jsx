@@ -1,28 +1,29 @@
 import { useState } from "react";
 import { Icon } from "../components/ui";
 import { useActive, Words } from "../components/Reveal";
-import { getApp, appHref } from "./AppDownload";
+import { getApp, useAppHref } from "./AppDownload";
 
 /* ================= 8. USE CASES — cinematic poster cards (flip to see how KidPool helps) ================= */
 const CASES = [
   {
-    img: "/illustrations/hero-dropoff.jpg", pos: "62% 60%", icon: "repeat", front: "The regular drop-off", sub: "Same place, same time, every week.",
+    img: "/illustrations/hero-dropoff.webp", pos: "62% 60%", icon: "repeat", front: "The regular drop-off", sub: "Same place, same time, every week.",
     back: "Share the week with a family going the same way.",
     steps: [["Mornings", "You drive"], ["Pickups", "Sam drives"], ["Every week", "Set once, it repeats"]],
   },
   {
-    img: "/illustrations/busy-evening.jpg", pos: "50% 45%", icon: "calendar", front: "Busy evenings", sub: "Practice at four, a lesson at five, and only one of you.",
+    img: "/illustrations/busy-evening.webp", pos: "50% 45%", icon: "calendar", front: "Busy evenings", sub: "Practice at four, a lesson at five, and only one of you.",
     back: "Ask families going to the same place for a seat.",
     steps: [["5:30 pm", "You ask for a seat"], ["5:32 pm", "John offers one"], ["Confirmed", "Both families agree"]],
   },
   {
-    img: "/illustrations/plans-change.jpg", pos: "45% 40%", icon: "flip", front: "When plans change", sub: "A late meeting, a sick sibling, a flat tyre.",
-    back: "Post a request for today and let your community help.",
+    img: "/illustrations/plans-change.webp", pos: "45% 40%", icon: "flip", front: "When plans change", sub: "A late meeting, a sick sibling, a flat tire.",
+    back: "Post a request for today and let your pool help.",
     steps: [["Now", "You post a request"], ["+2 min", "Nearby families see it"], ["Sorted", "“I’ve got Leo!”"]],
   },
 ];
 
 function FlipCard({ c, i }) {
+  const appStore = useAppHref();
   const [flipped, setFlipped] = useState(false);
   const [pick, setPick] = useState(-1);
   const flip = (v) => { setFlipped(v); setPick(-1); };
@@ -66,7 +67,7 @@ function FlipCard({ c, i }) {
               ))}
             </ol>
             <div className="cin__actions">
-              <a className="cin__app" href={appHref()} onClick={getApp}>Get the app <span aria-hidden="true">→</span></a>
+              <a className="cin__app" href={appStore} onClick={getApp}>Get the app <span aria-hidden="true">→</span></a>
               <button type="button" className="cin__backbtn" onClick={() => flip(false)}>← Back</button>
             </div>
           </div>

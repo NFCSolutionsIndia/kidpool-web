@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Icon, Placeholder } from "../components/ui";
-import CommunityScene from "../scenes/CommunityScene";
+import { CommunityScene } from "../scenes/lazy";
 import { useActive, Words } from "../components/Reveal";
 
 /* simple line icons for the safety features (ink stroke, lime accent) */
@@ -23,7 +23,7 @@ const FEATURES = [
   ["qr", "Check-in at pickup & drop-off", "A quick QR check-in at each stop, and you’re notified straight away."],
   ["sos", "SOS during a ride", "A one-tap emergency button whenever a ride is in progress."],
   ["late", "Running-late alerts", "Drivers can let everyone know about delays in one tap."],
-  ["id", "Driver ID check", "Drivers add a photo ID or licence before offering rides."],
+  ["id", "Driver ID check", "Drivers add a photo ID or license before offering rides."],
   ["block", "Block or report", "Block or report anyone, any time. You stay in control."],
 ];
 function SafetyFeatures() {
@@ -55,7 +55,7 @@ export default function Safety() {
   const activeRef = useRef(false);
   useEffect(() => { activeRef.current = active; }, [active]);
   const captions = [
-    "Your community: the families you can coordinate rides with.",
+    "Your pool: the families you can coordinate rides with.",
     "One ride: a family asks, another offers, and both confirm the details.",
   ];
   return (
@@ -65,7 +65,7 @@ export default function Safety() {
         <div className={"safety__visual sv" + (active ? " sv--in" : "")}>
           <CommunityScene modeRef={modeRef} activeRef={activeRef} />
           <div className="segmented rv-up" style={{ "--d": "1.1s" }} role="group" aria-label="Choose what the diagram shows">
-            {["Your community", "A single ride"].map((l, i) => (
+            {["Your pool", "A single ride"].map((l, i) => (
               <button key={l} aria-pressed={mode === i} className={mode === i ? "on" : ""} onClick={() => setMode(i)}>{l}</button>
             ))}
           </div>
@@ -74,9 +74,9 @@ export default function Safety() {
         <div className="safety__copy">
           <span className="accent-bar rv-up" style={{ "--d": ".1s" }} aria-hidden="true" />
           <h2 className="display-l rv-title" aria-label="You stay in control"><Words lines={["You stay in control"]} /></h2>
-          <p className="lede rv-up" style={{ "--d": ".55s" }}>KidPool is for coordinating rides within your own communities, not with strangers on a public app. Every ride is something you choose to ask for or offer.</p>
+          <p className="lede rv-up" style={{ "--d": ".55s" }}>KidPool is for coordinating rides within your own pools, not with strangers on a public app. Every ride is something you choose to ask for or offer.</p>
           <ul className="points">
-            <li className="rv-up sp" style={{ "--d": ".8s" }}><Icon name="together" /><div><h3>Your community, not the public</h3><p>Rides are arranged only among families who belong to the same community group.</p></div></li>
+            <li className="rv-up sp" style={{ "--d": ".8s" }}><Icon name="together" /><div><h3>Your pool, not the public</h3><p>Rides are arranged only among families in the same pool, never with the public.</p></div></li>
             <li className="rv-up sp" style={{ "--d": ".95s" }}><Icon name="check" /><div><h3>Nothing happens without you</h3><p>Families review each request or offer and confirm before a ride goes ahead.</p></div></li>
             <li className="rv-up sp" style={{ "--d": "1.1s" }}><Icon name="route" /><div><h3>Clear details every time</h3><p>Time, pickup, drop-off, and children are on every ride, so nobody has to guess.</p></div></li>
           </ul>
