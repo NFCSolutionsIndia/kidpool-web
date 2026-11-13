@@ -13,7 +13,7 @@ const CASES = [
   {
     img: "/illustrations/busy-evening.jpg", pos: "50% 45%", icon: "calendar", front: "Busy evenings", sub: "Practice at four, a lesson at five, and only one of you.",
     back: "Ask families going to the same place for a seat.",
-    steps: [["5:30 pm", "You ask for a seat"], ["5:32 pm", "Priya offers one"], ["Confirmed", "Both families agree"]],
+    steps: [["5:30 pm", "You ask for a seat"], ["5:32 pm", "John offers one"], ["Confirmed", "Both families agree"]],
   },
   {
     img: "/illustrations/plans-change.jpg", pos: "45% 40%", icon: "flip", front: "When plans change", sub: "A late meeting, a sick sibling, a flat tyre.",
