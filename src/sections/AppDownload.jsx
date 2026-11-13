@@ -41,9 +41,9 @@ const AUTOPLAY_MS = 3800;
 const SLIDES = [
   { key: "home", src: "/app-screens/home.png", title: "Your day at a glance", text: "Today’s ride, who’s driving, and families nearby who can help." },
   { key: "who", src: "/app-screens/who-is-going.png", title: "Ask for a ride in a few taps", text: "Pick who’s going, where and when. Siblings ride together." },
-  { key: "families", src: "/app-screens/families.png", title: "Families going your way", text: "Parents from your own communities. Never addresses." },
+  { key: "families", src: "/app-screens/families.png?v=4", title: "Families going your way", text: "Parents from your own communities. Never addresses." },
   { key: "tracking", src: "/app-screens/tracking.png", title: "Follow the ride live", text: "See pickup, the route and who’s driving, with SOS one tap away." },
-  { key: "messages", src: "/app-screens/messages.png", title: "Talk it through", text: "Message other families when plans change." },
+  { key: "messages", src: "/app-screens/messages.png?v=4", title: "Talk it through", text: "Message other families when plans change." },
   { key: "started", src: "/app-screens/ride-started.png", title: "Updates as they happen", text: "A notification the moment your kids are picked up." },
 ];
 
