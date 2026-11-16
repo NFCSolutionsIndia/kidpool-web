@@ -92,7 +92,7 @@ button{font:inherit;color:inherit}
 .mnav--open{display:flex;flex-direction:column;gap:6px;position:absolute;left:12px;right:12px;top:76px;padding:10px;background:var(--bg);border:1.5px solid var(--ink);border-radius:var(--r-l);box-shadow:5px 5px 0 var(--ink);animation:mnavIn .28s cubic-bezier(.2,.8,.2,1)}
 .mnav a{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:14px;text-decoration:none;font-weight:600;font-size:1.05rem;color:var(--ink)}
 .mnav a:hover{background:var(--lime-soft)}
-.mnav a.is-on{background:var(--ink);color:var(--lime)}
+.mnav a.is-on{background:var(--lime-ink);color:var(--lime)}
 @keyframes mnavIn{from{opacity:0;transform:translateY(-8px) scale(.98)}}
 @media (max-width:420px){.header .btn--sm{padding:0 14px;font-size:.88rem}}
 @media (min-width:900px){
@@ -133,7 +133,7 @@ button{font:inherit;color:inherit}
 .hero__tag b{display:block;font-weight:700}
 .hero__tag small{color:var(--muted);font-size:.78rem}
 .hero__tag-icon{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--lime);color:var(--lime-ink);font-weight:800}
-.hero__tag-icon--ink{background:var(--ink);color:var(--lime)}
+.hero__tag-icon--ink{background:var(--lime-ink);color:var(--lime)}
 .hero__tag--a{left:2%;top:14%}
 .hero__tag--b{right:2%;bottom:14%;animation-delay:-2.5s}
 @keyframes heroFloat{50%{transform:translateY(-8px)}}
@@ -155,8 +155,8 @@ button{font:inherit;color:inherit}
 .tile3d{position:relative;flex:0 0 56px;height:56px;perspective:300px;transform-style:preserve-3d}
 .tile3d__base,.tile3d__icon{position:absolute;inset:0;border-radius:16px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .tile3d__base{background:var(--lime-soft);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0)}
-.tile3d__icon{display:grid;place-items:center;color:var(--ink);background:var(--lime);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translate3d(-4px,-4px,16px);box-shadow:4px 4px 0 var(--ink)}
-.trust__item:hover .tile3d__icon{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translate3d(-7px,-7px,26px);box-shadow:7px 7px 0 var(--ink)}
+.tile3d__icon{display:grid;place-items:center;color:var(--lime-ink);background:var(--lime);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translate3d(-4px,-4px,16px);box-shadow:4px 4px 0 var(--lime-ink)}
+.trust__item:hover .tile3d__icon{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translate3d(-7px,-7px,26px);box-shadow:7px 7px 0 var(--lime-ink)}
 
 /* sections */
 .section{padding:72px 0}
@@ -723,7 +723,7 @@ button{font:inherit;color:inherit}
 .trust__item .tx{transition:color .35s ease;transition-delay:calc(var(--w) * 40ms)}
 .trust__item--focus .tx{color:var(--ink)}
 .trust__item .tile3d__icon{transition:transform .5s cubic-bezier(.3,1.5,.5,1),box-shadow .5s}
-.trust__item--focus .tile3d__icon{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translate3d(-7px,-7px,26px);box-shadow:7px 7px 0 var(--ink)}
+.trust__item--focus .tile3d__icon{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translate3d(-7px,-7px,26px);box-shadow:7px 7px 0 var(--lime-ink)}
 @media (prefers-reduced-motion:reduce){
   .trust .tw,.trust .tx{transform:none;opacity:1;filter:none}
   .trust--in .tw,.trust--in .tx{animation:none}
@@ -816,7 +816,7 @@ button{font:inherit;color:inherit}
 .pmap__label{font:600 15px var(--body);fill:var(--ink);opacity:.7}
 .pmap__pulse{fill:none;stroke:var(--ink);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center}
 .pmap__halo{fill:var(--lime);opacity:0;filter:blur(8px);transition:opacity .8s}
-.pmap__time rect{fill:var(--ink)}.pmap__time text{font:700 13px var(--body);fill:var(--lime)}
+.pmap__time rect{fill:var(--lime-ink)}.pmap__time text{font:700 13px var(--body);fill:var(--lime)}
 .pmap__time{opacity:.9}
 .pmap__car{opacity:0;transition:opacity .6s}
 .pmap__home,.pmap__school,.pmap__time{transform-box:fill-box}
@@ -1270,7 +1270,7 @@ button{font:inherit;color:inherit}
 
 /* ================= Use cases: cinematic poster cards ================= */
 .cin,.cin .flip__inner{min-height:440px}
-.cin__front{padding:0;border:0;overflow:hidden;background:var(--ink);box-shadow:0 30px 60px -28px rgba(20,23,26,.55);transition:box-shadow .5s}
+.cin__front{padding:0;border:0;overflow:hidden;background:var(--lime-ink);box-shadow:0 30px 60px -28px rgba(20,23,26,.55);transition:box-shadow .5s}
 .cin__media{position:absolute;inset:0;overflow:hidden}
 .cin__media img{width:100%;height:100%;object-fit:cover;transform:scale(1.28);filter:saturate(1.05) brightness(.9);transition:transform 1.4s cubic-bezier(.2,.8,.2,1),filter .6s}
 /* camera settles in on entrance, then drifts slowly (Ken Burns) */
@@ -1293,7 +1293,7 @@ button{font:inherit;color:inherit}
 .cin__body{position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;gap:8px;padding:26px 26px 24px}
 .cin__title{color:#fff;font-size:1.65rem;text-shadow:0 2px 18px rgba(0,0,0,.35)}
 .cin__sub{color:rgba(255,255,255,.82)}
-.cin__cta{align-self:flex-start;margin-top:8px;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:var(--lime);color:var(--ink);font-weight:650;font-size:.88rem;box-shadow:0 8px 24px -8px rgba(203,243,75,.6);transition:transform .35s,box-shadow .35s}
+.cin__cta{align-self:flex-start;margin-top:8px;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:var(--lime);color:var(--lime-ink);font-weight:650;font-size:.88rem;box-shadow:0 8px 24px -8px rgba(203,243,75,.6);transition:transform .35s,box-shadow .35s}
 .cin__arrow{display:inline-block;transition:transform .35s}
 /* text rises in after the card lands */
 .rv .cin__body > *{opacity:0;transform:translateY(16px)}
@@ -1308,12 +1308,12 @@ button{font:inherit;color:inherit}
 .cin.flip--on:hover .flip__inner{transform:rotateY(180deg)}
 .cin:hover .cin__front{box-shadow:0 40px 70px -26px rgba(20,23,26,.6),0 0 0 2px var(--lime)}
 .cin:hover .cin__media img{filter:saturate(1.15) brightness(1)}
-.cin:hover .cin__icon{transform:rotate(-10deg) scale(1.08);background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.cin:hover .cin__icon{transform:rotate(-10deg) scale(1.08);background:var(--lime);color:var(--lime-ink);border-color:var(--lime)}
 .cin:hover .cin__arrow{transform:translateX(5px)}
 .cin:hover .cin__cta{box-shadow:0 12px 30px -8px rgba(203,243,75,.85)}
 /* back */
 .cin__back{justify-content:flex-end;padding:30px}
-.cin__check{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--lime);color:var(--ink);margin-bottom:auto;transform:scale(0) rotate(-90deg);transition:transform .6s cubic-bezier(.3,1.6,.5,1) .3s}
+.cin__check{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--lime);color:var(--lime-ink);margin-bottom:auto;transform:scale(0) rotate(-90deg);transition:transform .6s cubic-bezier(.3,1.6,.5,1) .3s}
 .flip--on .cin__check{transform:none}
 .cin__back .flip__title{color:#fff;font-size:1.6rem}
 .cin__back .flip__hint{color:rgba(255,255,255,.85);text-decoration:none;margin-top:8px}
@@ -1326,13 +1326,13 @@ button{font:inherit;color:inherit}
 /* ================= Use cases: interactive card backs ================= */
 .cin .flip__inner{cursor:default}
 .cin__front{cursor:pointer;width:100%;text-align:left;font:inherit;color:inherit}
-.cin__back{padding:0;overflow:hidden;background:var(--ink)}
+.cin__back{padding:0;overflow:hidden;background:var(--lime-ink)}
 .cin__backimg{position:absolute;inset:0}
 .cin__backimg img{width:100%;height:100%;object-fit:cover;filter:blur(14px) saturate(1.2) brightness(.55);transform:scale(1.2)}
 .cin__back::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(20,23,26,.82),rgba(63,82,34,.78) 55%,rgba(203,243,75,.45))}
 .cin__backin{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;padding:24px 22px 20px;color:#fff}
 .cin__eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;color:var(--lime);font:600 .68rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.18em;text-transform:uppercase}
-.cin__back .cin__check{display:inline-grid;place-items:center;width:26px;height:26px;margin:0;border-radius:50%;background:var(--lime);color:var(--ink);transform:scale(0) rotate(-90deg);transition:transform .6s cubic-bezier(.3,1.6,.5,1) .35s}
+.cin__back .cin__check{display:inline-grid;place-items:center;width:26px;height:26px;margin:0;border-radius:50%;background:var(--lime);color:var(--lime-ink);transform:scale(0) rotate(-90deg);transition:transform .6s cubic-bezier(.3,1.6,.5,1) .35s}
 .flip--on .cin__back .cin__check{transform:none}
 .cin__back .flip__title{margin:0;color:#fff;font-size:1.45rem}
 .cin__lead{margin:6px 0 14px;color:rgba(255,255,255,.82);font-size:.95rem;line-height:1.45}
@@ -1346,13 +1346,13 @@ button{font:inherit;color:inherit}
 .flip--on .cin__step{opacity:1;transform:none;transition-delay:calc(.5s + var(--s) * .28s),calc(.5s + var(--s) * .28s),0s,0s,0s}
 .cin__step:hover,.cin__step.is-on,.cin__step:focus-visible{background:rgba(203,243,75,.16);border-color:var(--lime);box-shadow:0 8px 24px -10px rgba(203,243,75,.6);transform:translateX(4px)}
 .cin__tick{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.4);color:transparent;transition:background .3s,color .3s,border-color .3s,transform .5s cubic-bezier(.3,1.6,.5,1)}
-.flip--on .cin__tick{background:var(--lime);border-color:var(--lime);color:var(--ink);transform:scale(1.05);transition-delay:calc(.75s + var(--s) * .28s)}
+.flip--on .cin__tick{background:var(--lime);border-color:var(--lime);color:var(--lime-ink);transform:scale(1.05);transition-delay:calc(.75s + var(--s) * .28s)}
 .cin__when{font:600 .7rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.06em;color:var(--lime);white-space:nowrap}
 .cin__what{font-size:.9rem;font-weight:600}
 /* actions */
 .cin__actions{display:flex;gap:10px;align-items:center;margin-top:auto;padding-top:14px;opacity:0;transform:translateY(10px);transition:opacity .5s,transform .6s}
 .flip--on .cin__actions{opacity:1;transform:none;transition-delay:1.4s}
-.cin__app{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--lime);color:var(--ink);font-weight:650;font-size:.88rem;text-decoration:none;box-shadow:0 8px 24px -8px rgba(203,243,75,.7);transition:transform .25s,box-shadow .25s}
+.cin__app{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--lime);color:var(--lime-ink);font-weight:650;font-size:.88rem;text-decoration:none;box-shadow:0 8px 24px -8px rgba(203,243,75,.7);transition:transform .25s,box-shadow .25s}
 .cin__app:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px rgba(203,243,75,.9)}
 .cin__app span{transition:transform .3s}
 .cin__app:hover span{transform:translateX(4px)}
@@ -1398,7 +1398,7 @@ button{font:inherit;color:inherit}
 
 /* keyboard focus: always a clear outline (WCAG 2.4.7) */
 :focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
-.btn--lime:focus-visible,.store:focus-visible,.cf__arrow:focus-visible{outline-color:var(--ink);box-shadow:0 0 0 6px var(--lime)}
+.btn--lime:focus-visible,.store:focus-visible,.cf__arrow:focus-visible{outline-color:var(--lime-ink);box-shadow:0 0 0 6px var(--lime)}
 
 /* screen-reader-only text (read aloud, not shown) */
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
@@ -1408,13 +1408,13 @@ button{font:inherit;color:inherit}
 /* ================= 404 page ================= */
 .ucp__ctas{margin-top:26px}
 .ucp__ghost{border-color:rgba(255,255,255,.7);color:#fff;background:transparent}
-.ucp__ghost:hover{background:#fff;color:var(--ink)}
+.ucp__ghost:hover{background:#fff;color:var(--lime-ink)}
 
 /* footer social icons */
 .sft__social{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
 .sft__soc{--sft-bg:#2c3a1c;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.06);color:#fff;text-decoration:none;transition:background .25s,color .25s,border-color .25s,transform .25s}
 .sft__soc svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-a.sft__soc:hover,a.sft__soc:focus-visible{--sft-bg:var(--lime);background:var(--ink);color:var(--lime);border-color:var(--lime);transform:translateY(-2px)}
+a.sft__soc:hover,a.sft__soc:focus-visible{--sft-bg:var(--lime);background:var(--lime-ink);color:var(--lime);border-color:var(--lime);transform:translateY(-2px)}
 .sft__soc--soon{opacity:.75;cursor:default}
 .sft__soc--soon:hover{opacity:1}
 
@@ -1443,7 +1443,7 @@ a.sft__soc:hover,a.sft__soc:focus-visible{--sft-bg:var(--lime);background:var(--
 /* hover: lift, fill lime, tilt the mark, glow */
 .sft__soc{transition:transform .35s cubic-bezier(.3,1.5,.5,1),background .3s,color .3s,border-color .3s,box-shadow .35s}
 .sft__soc svg{transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
-.sft__soc:hover,a.sft__soc:focus-visible{--sft-bg:var(--lime);background:var(--lime);color:var(--ink);border-color:var(--lime);opacity:1;transform:translateY(-4px) scale(1.08);box-shadow:0 12px 26px -8px rgba(203,243,75,.75)}
+.sft__soc:hover,a.sft__soc:focus-visible{--sft-bg:var(--lime);background:var(--lime);color:var(--lime-ink);border-color:var(--lime);opacity:1;transform:translateY(-4px) scale(1.08);box-shadow:0 12px 26px -8px rgba(203,243,75,.75)}
 .sft__soc:hover svg,a.sft__soc:focus-visible svg{transform:rotate(-10deg) scale(1.08)}
 @media (prefers-reduced-motion:reduce){
   .rv .sft__socli{opacity:1}.rv--in .sft__socli,.rv--in .sft__socli::after,.rv--in .sft__soc::before{animation:none}
@@ -1467,7 +1467,7 @@ a.sft__soc:hover,a.sft__soc:focus-visible{--sft-bg:var(--lime);background:var(--
 .sft__socli:hover .sft__tip b::before,.sft__socli:focus-within .sft__tip b::before{animation:tipPulse 1.4s ease-out infinite}
 @keyframes tipPulse{0%{box-shadow:0 0 0 0 rgba(203,243,75,.7)}100%{box-shadow:0 0 0 8px rgba(203,243,75,0)}}
 /* status badge */
-.sft__tip em{font-style:normal;font-size:.64rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--lime);padding:5px 8px;border-radius:999px}
+.sft__tip em{font-style:normal;font-size:.64rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--lime-ink);background:var(--lime);padding:5px 8px;border-radius:999px}
 /* show */
 .sft__socli:hover .sft__tip,.sft__socli:focus-within .sft__tip{opacity:1;filter:none;transform:translate(-50%,0) scale(1)}
 /* first icon: keep the tooltip inside the screen edge on phones */
@@ -1505,21 +1505,89 @@ a.sft__soc:hover,a.sft__soc:focus-visible{--sft-bg:var(--lime);background:var(--
 /* safety: plain-language note under the feature grid */
 .sfeat__note{margin:18px 0 0;max-width:72ch;font-size:.92rem;color:var(--muted)}
 
-/* ================= Your Privacy Choices ================= */
-.pc{display:grid;gap:14px}
-.pc__status{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:var(--surface);color:var(--ink);font-size:.95rem}
-.pc__status--on{background:var(--lime-soft)}
-.pc__dot{flex:none;width:10px;height:10px;border-radius:50%;background:#8a948f}
-.pc__status--on .pc__dot{background:#3f7d1c;box-shadow:0 0 0 4px rgba(63,125,28,.18)}
-.pc__row{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px;border:1px solid var(--line);border-radius:16px;cursor:pointer}
-.pc__row b{display:block;font-size:1.02rem}
-.pc__row small{display:block;margin-top:4px;color:var(--muted);font-size:.9rem;line-height:1.45}
-.pc__switch{position:relative;flex:none;width:52px;height:30px}
-.pc__switch input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
-.pc__switch input:disabled{cursor:not-allowed}
-.pc__switch i{position:absolute;inset:0;border-radius:99px;background:#c9d0d6;transition:background .2s}
-.pc__switch i::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .2s}
-.pc__switch--on i{background:var(--ink)}
-.pc__switch--on i::after{transform:translateX(22px);background:var(--lime)}
-.pc__switch input:focus-visible + i{outline:3px solid var(--lime);outline-offset:3px}
-.pc__note{margin:0;color:var(--muted);font-size:.9rem}
+
+/* ================= dark theme: sections that use fixed light surfaces =================
+   The color tokens at the top already switch for dark mode; these sections paint their own
+   light backgrounds (photo washes, frosted cards, legal panels), so they get dark versions here. */
+@media (prefers-color-scheme:dark){
+  /* For families: like the ride-request section, the photo shows clearly on the right
+     and fades into a deep green-black on the left where the heading sits */
+  :root:not([data-theme="light"]) .feats{
+    background:
+      linear-gradient(180deg,rgba(15,19,22,.55) 0%,rgba(15,19,22,0) 18%,rgba(15,19,22,0) 80%,#0F1316 100%),
+      linear-gradient(90deg,#11160D 0%,rgba(17,22,13,.92) 28%,rgba(17,22,13,.45) 55%,rgba(17,22,13,.12) 78%,rgba(17,22,13,0) 100%),
+      url("/illustrations/busy-morning.webp") center 35% / cover no-repeat;
+    background-color:#0F1316}
+  @media (max-width:959px){
+    /* stacked layout: keep the photo behind the heading area, cards sit on a darker base */
+    :root:not([data-theme="light"]) .feats{
+      background:
+        linear-gradient(180deg,rgba(17,22,13,.62) 0%,rgba(17,22,13,.82) 26%,#11160D 50%,#0F1316 100%),
+        linear-gradient(90deg,rgba(17,22,13,.55) 0%,rgba(17,22,13,0) 70%),
+        url("/illustrations/busy-morning.webp") 70% top / auto 520px no-repeat;
+      background-color:#0F1316}
+  }
+  :root:not([data-theme="light"]) .feats .feature:not(.feature--lime){background:rgba(22,28,33,.88);border:1px solid rgba(255,255,255,.08)}
+  /* Ride request preview: long, smooth fade from the text column into the photo (no light seam),
+     photo kept at its own proportions and dimmed slightly so the bright path doesn't glare */
+  @media (min-width:960px){
+    :root:not([data-theme="light"]) .pview__photo{
+      background:
+        linear-gradient(90deg,#171C10 0%,rgba(23,28,16,.97) 32%,rgba(23,28,16,.82) 44%,rgba(23,28,16,.5) 56%,rgba(23,28,16,.2) 68%,rgba(23,28,16,.05) 80%,rgba(23,28,16,0) 90%),
+        linear-gradient(180deg,rgba(23,28,16,.55) 0%,rgba(23,28,16,0) 20%,rgba(23,28,16,0) 70%,rgba(23,28,16,.8) 100%),
+        linear-gradient(rgba(12,16,9,.28),rgba(12,16,9,.28)),
+        url("/illustrations/parent-kid-right.webp") right center / cover no-repeat;
+      background-size:auto,auto,auto,cover}
+  }
+  @media (max-width:959px){
+    :root:not([data-theme="light"]) .pview__photo{
+      background:
+        linear-gradient(180deg,#171C10 0%,#171C10 50%,rgba(23,28,16,.55) 64%,rgba(23,28,16,.3) 80%,rgba(23,28,16,.75) 100%),
+        linear-gradient(rgba(12,16,9,.25),rgba(12,16,9,.25)),
+        url("/illustrations/parent-kid-right.webp") 100% bottom / auto 55% no-repeat}
+  }
+  /* card icon tiles: lifted tile, lime icon */
+  :root:not([data-theme="light"]) .feature:not(.feature--lime) .feature__icon{background:#232B1C;border:1px solid rgba(203,243,75,.28);color:var(--lime)}
+  /* card illustrations are drawn in ink; switch ink lines and fills to light,
+     except marks that sit on lime or pale fills (clock hand, chat dots) */
+  :root:not([data-theme="light"]) .feature:not(.feature--lime) .fart [stroke="#14171A"]:not(.fa-spin *){stroke:#E3E8EC}
+  :root:not([data-theme="light"]) .feature:not(.feature--lime) .fart [fill="#14171A"]:not(.fa-type){fill:#E3E8EC}
+
+  /* Safety: deep green-black stage, dim lime glow, dark glass panels */
+  :root:not([data-theme="light"]) .safe-bg{background:linear-gradient(180deg,#0F1316 0%,#131a0f 55%,#0F1316 100%)}
+  :root:not([data-theme="light"]) .safe-bg__light{background:
+      radial-gradient(900px 560px at 20% 22%,rgba(203,243,75,.08),transparent 70%),
+      radial-gradient(760px 520px at 28% 72%,rgba(203,243,75,.10),transparent 70%),
+      radial-gradient(640px 460px at 92% 12%,rgba(203,243,75,.07),transparent 70%),
+      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/48px 48px,
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) 0 0/48px 48px}
+  :root:not([data-theme="light"]) .safe-bg .safety__visual{background:linear-gradient(180deg,rgba(26,32,38,.9),rgba(20,25,30,.75));border-color:rgba(255,255,255,.08);
+    box-shadow:0 40px 80px -40px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.06)}
+  :root:not([data-theme="light"]) .safe-bg .points li > svg{background:#1D242A;color:var(--lime);box-shadow:0 6px 14px -8px rgba(0,0,0,.6)}
+  :root:not([data-theme="light"]) .sfeat__card{background:linear-gradient(180deg,rgba(26,32,38,.92),rgba(22,28,33,.82));border-color:rgba(255,255,255,.08);
+    box-shadow:0 20px 40px -26px rgba(0,0,0,.7)}
+  :root:not([data-theme="light"]) .sfeat__card:hover{box-shadow:0 26px 50px -24px rgba(0,0,0,.75),0 0 0 1px rgba(203,243,75,.6)}
+  :root:not([data-theme="light"]) .sfeat__card:hover .sfeat__icon svg{stroke:#14171A}
+  :root:not([data-theme="light"]) .sfeat__card:hover .sfeat__icon .acc{stroke:#14171A}
+  /* SOS icon: outline only in dark mode (a filled lime disc is too heavy on dark cards) */
+  :root:not([data-theme="light"]) .sfeat__icon .acc--ring,
+  :root:not([data-theme="light"]) .sfeat__card:hover .sfeat__icon .acc--ring{fill:none}
+
+  /* FAQ: dark cards and number tiles */
+  :root:not([data-theme="light"]) .fq__card{background:var(--card);box-shadow:0 20px 40px -18px rgba(0,0,0,.7)}
+  :root:not([data-theme="light"]) .fq__item{background:var(--card);box-shadow:none}
+  :root:not([data-theme="light"]) .fq__item:hover{border-color:rgba(203,243,75,.45)}
+  :root:not([data-theme="light"]) .fq__item--on{background:#1A2117;border-color:#2F3A29;box-shadow:0 14px 34px -22px rgba(0,0,0,.7)}
+  :root:not([data-theme="light"]) .fq__num{background:#1D242A;border-color:#2A333B;color:#A4AEB7}
+  :root:not([data-theme="light"]) .fq__item--on .fq__num{background:var(--lime);border-color:var(--lime);color:var(--lime-ink)}
+
+  /* Legal pages */
+  :root:not([data-theme="light"]) .lg{background:linear-gradient(180deg,#0F1316 0%,#121810 40%,#0F1316 100%)}
+  :root:not([data-theme="light"]) .lg__sec{background:var(--card);box-shadow:0 18px 40px -32px rgba(0,0,0,.7)}
+  :root:not([data-theme="light"]) .lg__sec p,
+  :root:not([data-theme="light"]) .lg__sec ul li{color:#C9D1D8}
+  :root:not([data-theme="light"]) .lg__sec ul li::before{box-shadow:none}
+  :root:not([data-theme="light"]) .lg__toc a span{color:#8E9A93}
+  :root:not([data-theme="light"]) .lg__toc a.on span{color:var(--lime)}
+  :root:not([data-theme="light"]) .lg__back:hover{color:var(--bg)}
+}

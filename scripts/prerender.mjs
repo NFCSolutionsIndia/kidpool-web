@@ -87,12 +87,6 @@ const ROUTES = [
     description: "The rules for using KidPool to coordinate rides with families in your pool, including driver and parent responsibilities.",
     jsonld: [organization, crumbs("Terms & Conditions", "/terms")],
   },
-  {
-    path: "/privacy-choices", out: "privacy-choices/index.html",
-    title: "Your Privacy Choices | KidPool",
-    description: "Opt out of the sale or sharing of your personal information on KidPool, and see how we honor Global Privacy Control.",
-    jsonld: [organization, crumbs("Your Privacy Choices", "/privacy-choices")],
-  },
   // 404: what hosts serve for unknown addresses; never indexed
   { path: "/404", out: "404.html", title: "Page not found | KidPool", description: "This page could not be found.", noindex: true, jsonld: [] },
 ];

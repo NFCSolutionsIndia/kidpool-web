@@ -104,7 +104,6 @@ export default function Footer() {
           <ul>
             <li><a href={url("privacy")}>Privacy Policy</a></li>
             <li><a href={url("terms")}>Terms & Conditions</a></li>
-            <li><a href={url("privacy-choices")}>Your Privacy Choices</a></li>
           </ul>
         </div>
       </div>

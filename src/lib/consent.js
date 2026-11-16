@@ -8,7 +8,7 @@ const listeners = new Set();
 /* true when the browser sends the Global Privacy Control signal (treated as an opt-out) */
 export const gpcEnabled = () => typeof navigator !== "undefined" && navigator.globalPrivacyControl === true;
 
-/* the visitor's own choice on the "Your Privacy Choices" page */
+/* a stored opt-out for this browser (set with setOptedOut, e.g. after a visitor's opt-out request) */
 export function optedOut() {
   try { return localStorage.getItem(KEY) === "1"; } catch { return false; }
 }

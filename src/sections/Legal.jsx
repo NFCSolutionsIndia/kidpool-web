@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS, OPERATOR, LEGAL_NAME } from "./Footer";
 import { url } from "../lib/base";
-import PrivacyChoices from "../components/PrivacyChoices";
 
 /* ================= Legal pages: Privacy Policy + Terms & Conditions =================
    Draft content written for KidPool. Have it reviewed by a qualified lawyer before launch. */
@@ -68,7 +67,7 @@ const PRIVACY = [
         <li><strong>Legal and safety reasons:</strong> when required by law, or when we believe in good faith it is needed to protect someone’s safety, investigate fraud or misuse, or defend our legal rights.</li>
         <li><strong>Business changes:</strong> if KidPool is involved in a merger, acquisition or sale of assets, your information may be transferred, and this policy will continue to apply.</li>
       </ul>
-      <p><strong>We do not sell your personal information or share it for cross-context behavioral advertising.</strong> Our website does not currently use analytics or advertising tools. If we add any, we will name each one in this policy first, and they will respect your choices on the <a href={url("privacy-choices")}>Your Privacy Choices</a> page and the Global Privacy Control signal from your browser. We never use children’s information for advertising.</p>
+      <p><strong>We do not sell your personal information or share it for cross-context behavioral advertising.</strong> Our website does not currently use analytics or advertising tools. If we add any, we will name each one in this policy first, and they will respect your opt-out request and the Global Privacy Control signal from your browser. We never use children’s information for advertising.</p>
     </>,
   },
   {
@@ -88,7 +87,7 @@ const PRIVACY = [
         <li><strong>Notifications:</strong> choose which alerts you receive.</li>
         <li><strong>Delete your account:</strong> delete your account in the app or by contacting us. We delete or de-identify your data except where we must keep it for legal, safety or security reasons.</li>
       </ul>
-      <p>You can opt out of the sale or sharing of your personal information at any time on our <a href={url("privacy-choices")}>Your Privacy Choices</a> page, and we treat a Global Privacy Control signal from your browser as a valid opt-out. Depending on where you live, including in states such as California, Virginia and Colorado, you may have additional rights to know, access, correct, delete or obtain a copy of your personal information, and to not be discriminated against for using these rights. To make a request, contact us using the details below. We will verify your request before acting on it.</p>
+      <p>You can opt out of the sale or sharing of your personal information at any time by contacting us using the details below, and we treat a Global Privacy Control signal from your browser as a valid opt-out. Depending on where you live, including in states such as California, Virginia and Colorado, you may have additional rights to know, access, correct, delete or obtain a copy of your personal information, and to not be discriminated against for using these rights. To make a request, contact us using the details below. We will verify your request before acting on it.</p>
     </>,
   },
   {
@@ -199,28 +198,8 @@ const TERMS = [
   },
 ];
 
-const CHOICES = [
-  {
-    id: "summary", title: "Your choices at a glance",
-    body: <><p>KidPool does not sell your personal information or share it for cross-context behavioral advertising, and our website does not currently use analytics or advertising tools.</p><p>You can still record your choice below. It will apply to any advertising or cross-site tools we add in the future, and we will never use children’s information for advertising.</p></>,
-  },
-  {
-    id: "opt-out", title: "Opt out of sale or sharing",
-    body: <PrivacyChoices />,
-  },
-  {
-    id: "gpc", title: "Global Privacy Control",
-    body: <p>Global Privacy Control (GPC) is a setting in some browsers and extensions that tells websites you don’t want your information sold or shared. When your browser sends it, KidPool treats it as a valid opt-out automatically, with no extra steps.</p>,
-  },
-  {
-    id: "other", title: "Other privacy requests",
-    body: <><p>To ask what information we hold about you, or to correct or delete it, contact us using the details below. Learn more in our <a href={url("privacy")}>Privacy Policy</a>.</p><Contact /></>,
-  },
-];
-
 const PAGES = {
   privacy: { title: "Privacy Policy", intro: "How KidPool collects, uses and protects your family’s information.", sections: PRIVACY },
-  "privacy-choices": { title: "Your Privacy Choices", intro: "Opt out of the sale or sharing of your personal information, and see how we honor Global Privacy Control.", sections: CHOICES, dateLabel: "Last updated" },
   terms: { title: "Terms & Conditions", intro: "The rules for using KidPool to coordinate rides with families in your pool.", sections: TERMS },
 };
 
@@ -252,7 +231,6 @@ export default function Legal({ page }) {
           <nav className="lg__tabs" aria-label="Policies">
             <a href={url("privacy")} aria-current={page === "privacy" ? "page" : undefined} className={page === "privacy" ? "on" : ""}>Privacy Policy</a>
             <a href={url("terms")} aria-current={page === "terms" ? "page" : undefined} className={page === "terms" ? "on" : ""}>Terms & Conditions</a>
-            <a href={url("privacy-choices")} aria-current={page === "privacy-choices" ? "page" : undefined} className={page === "privacy-choices" ? "on" : ""}>Your Privacy Choices</a>
           </nav>
           <h1 className="lg__title">{doc.title}</h1>
           <p className="lg__intro">{doc.intro}</p>

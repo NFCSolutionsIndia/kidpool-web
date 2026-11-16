@@ -10,7 +10,7 @@ const I = {
   home: <><path d="M4 11.5 12 5l8 6.5V20H4z" /><path d="M3 21 21 3" className="acc-s" /></>,
   live: <><path d="M12 21s-6-5.4-6-10a6 6 0 0 1 12 0c0 4.6-6 10-6 10Z" /><circle cx="12" cy="11" r="2.4" className="acc" /></>,
   qr: <><rect x="3.5" y="3.5" width="6" height="6" rx="1" /><rect x="14.5" y="3.5" width="6" height="6" rx="1" /><rect x="3.5" y="14.5" width="6" height="6" rx="1" /><path d="M14.5 14.5h2.5v2.5M20.5 14.5v6h-3.5M14.5 20.5v-2" /><rect x="5.5" y="5.5" width="2" height="2" className="acc" /></>,
-  sos: <><circle cx="12" cy="12" r="8.5" className="acc" /><path d="M12 7.5v5.5M12 16.2v.3" /></>,
+  sos: <><circle cx="12" cy="12" r="8.5" className="acc acc--ring" /><path d="M12 7.5v5.5M12 16.2v.3" /></>,
   late: <><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /><path d="M18.5 3.5l2 2" className="acc-s" /></>,
   id: <><rect x="3" y="5.5" width="18" height="13" rx="2.5" /><circle cx="8.5" cy="11" r="2" /><path d="M5.8 15.5c.6-1.4 1.6-2 2.7-2s2.1.6 2.7 2M13.5 10h4.5M13.5 13h3" /><circle cx="18.5" cy="16.5" r="3" className="acc" /></>,
   block: <><circle cx="12" cy="12" r="8.5" /><path d="M6 18 18 6" className="acc-s" /></>,

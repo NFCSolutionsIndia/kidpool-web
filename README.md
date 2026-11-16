@@ -2,7 +2,7 @@
 
 React 18 + Vite + three.js marketing site for KidPool, the carpool app for parents. Pages are pre-rendered to real HTML at build time for search engines and fast first paint.
 
-Pages: Home, Privacy Policy (`/privacy`), Terms & Conditions (`/terms`), Your Privacy Choices (`/privacy-choices`) and a 404 page.
+Pages: Home, Privacy Policy (`/privacy`), Terms & Conditions (`/terms`) and a 404 page.
 
 ## Run it
 
@@ -43,11 +43,11 @@ npm run preview    # serve dist/ the way a static host would
 src/
   main.jsx               app entry (hydrates the pre-rendered HTML)
   entry-server.jsx       build-time renderer used by scripts/prerender.mjs
-  App.jsx                routes: home, privacy, terms, privacy-choices, 404
+  App.jsx                routes: home, privacy, terms, 404
   sections/              Header, Hero, Trust, HowItWorks, Features, Preview, Safety,
                          UseCases, AppDownload, FAQ, Footer, Legal, NotFound
   scenes/                three.js scenes (HeroScene, StepsScene, CommunityScene), loaded lazily
-  components/            ui (icons, wordmark), Reveal (entrance animations), PrivacyChoices, Leaves, JellyRadio
+  components/            ui (icons, wordmark), Reveal (entrance animations), Leaves, JellyRadio
   hooks/                 useThreeScene, useTilt, useMotionPause (site-wide pause)
   lib/                   base (base path), brand (colors), consent (privacy choices),
                          ripple (button click effect), threeKit (3D builders)
