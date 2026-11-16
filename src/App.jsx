@@ -15,11 +15,11 @@ import NotFound from "./sections/NotFound";
 import { url, stripBase } from "./lib/base";
 
 /* Real URLs, each pre-rendered at build time so search engines can index them:
-   /, /privacy and /terms; anything else is the 404 page. */
+   /, /privacy, /terms and /privacy-choices; anything else is the 404 page. */
 export const routeOf = (path = "/") => {
   const p = path.replace(/\/+$/, "") || "/";
   if (p === "/" || p === "/index.html") return "home";
-  if (p === "/privacy" || p === "/terms") return p.slice(1);
+  if (p === "/privacy" || p === "/terms" || p === "/privacy-choices") return p.slice(1);
   return "notfound";
 };
 

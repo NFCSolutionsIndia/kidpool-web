@@ -49,8 +49,8 @@ const AUTOPLAY_MS = 3800;
 const SLIDES = [
   { key: "home", src: url("app-screens/home.png"), title: "Your day at a glance", text: "Today’s ride, who’s driving, and families nearby who can help." },
   { key: "who", src: url("app-screens/who-is-going.png"), title: "Ask for a ride in a few taps", text: "Pick who’s going, where and when. Siblings ride together." },
-  { key: "families", src: url("app-screens/families.png?v=4"), title: "Families going your way", text: "Parents in your pools. Never addresses." },
-  { key: "tracking", src: url("app-screens/tracking.png"), title: "Follow the ride live", text: "See pickup, the route and who’s driving, with SOS one tap away." },
+  { key: "families", src: url("app-screens/families.png?v=6"), title: "Families going your way", text: "Parents in your pools, shown by rough distance." },
+  { key: "tracking", src: url("app-screens/tracking.png?v=6"), title: "Follow the ride live", text: "See pickup, the route and who’s driving, with SOS always one tap away." },
   { key: "messages", src: url("app-screens/messages.png?v=4"), title: "Talk it through", text: "Message other families when plans change." },
   { key: "started", src: url("app-screens/ride-started.png"), title: "Updates as they happen", text: "A notification the moment your kids are picked up." },
 ];

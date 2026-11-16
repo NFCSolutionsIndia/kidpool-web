@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS } from "./Footer";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS, OPERATOR, LEGAL_NAME } from "./Footer";
 import { url } from "../lib/base";
+import PrivacyChoices from "../components/PrivacyChoices";
 
 /* ================= Legal pages: Privacy Policy + Terms & Conditions =================
    Draft content written for KidPool. Have it reviewed by a qualified lawyer before launch. */
@@ -11,7 +12,7 @@ const Contact = () => (
   <ul className="lg__contact">
     <li><b>Email</b><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
     <li><b>Phone</b><a href={`tel:${CONTACT_PHONE.replace(/[^\d+]/g, "")}`}>{CONTACT_PHONE}</a></li>
-    <li><b>Mail</b><span>KidPool, {CONTACT_ADDRESS}, USA</span></li>
+    <li><b>Mail</b><span>{LEGAL_NAME || "KidPool"}, {CONTACT_ADDRESS}, USA</span></li>
   </ul>
 );
 
@@ -19,7 +20,7 @@ const PRIVACY = [
   {
     id: "overview", title: "Overview",
     body: <>
-      <p>KidPool (“KidPool”, “we”, “us”) helps parents and guardians coordinate their kids’ rides with other families in their own pools. This Privacy Policy explains what information we collect when you use the KidPool website and mobile apps (the “Service”), how we use it, who can see it, and the choices you have.</p>
+      <p>{OPERATOR} (“KidPool”, “we”, “us”) helps parents and guardians coordinate their kids’ rides with other families in their own pools. This Privacy Policy explains what information we collect when you use the KidPool website and mobile apps (the “Service”), how we use it, who can see it, and the choices you have.</p>
       <p>We designed KidPool around a simple principle: <strong>your family’s information is shared only with the families you choose to coordinate with, and only as much as a ride needs.</strong> We do not sell your personal information.</p>
     </>,
   },
@@ -29,18 +30,18 @@ const PRIVACY = [
       <h4>Information you give us</h4>
       <ul>
         <li><strong>Account details:</strong> your name, phone number, email address and password or sign-in details.</li>
-        <li><strong>Your children’s details:</strong> first name, age and the places they go that you add so rides can match real schedules.</li>
-        <li><strong>Places:</strong> your home location and the venues you add. Other families see only a rough distance, never your exact address.</li>
+        <li><strong>Your children’s details:</strong> first name, age and grade, an optional photo, and the schools and activities you add so rides can match real schedules.</li>
+        <li><strong>Places:</strong> your home location and the venues you add. Other families see only a rough distance until you book a ride with them.</li>
         <li><strong>Rides:</strong> the requests and offers you create, including times, pickup and drop-off points, and which children are riding.</li>
         <li><strong>Messages and calls:</strong> messages you send to other families in the app, and in-app call records. Phone numbers are kept private.</li>
-        <li><strong>Driver verification:</strong> if you offer rides, a photo of your ID or driver’s license that you choose to upload.</li>
+        <li><strong>Driver checks:</strong> if you offer rides, a scan of your driver’s license to confirm your identity, and the details needed for a background check. We keep a record that you’re verified and the last 3 digits of your license, not a copy of it.</li>
         <li><strong>Support and feedback:</strong> anything you send us when you contact us.</li>
       </ul>
       <h4>Information collected automatically</h4>
       <ul>
         <li><strong>Location during rides:</strong> with your permission, the driver’s device location while a ride is in progress, used for live tracking, pickup check-ins and arrival alerts. Location is not tracked outside an active ride.</li>
         <li><strong>Device and usage data:</strong> device type, operating system, app version, crash reports and how features are used, to keep the Service working and improve it.</li>
-        <li><strong>Cookies on our website:</strong> small files that remember preferences and help us understand site traffic. You can control cookies in your browser settings.</li>
+        <li><strong>Browser storage on our website:</strong> small settings saved in your browser, such as whether you paused animations and your privacy choices. Our website does not currently use analytics or advertising cookies.</li>
       </ul>
     </>,
   },
@@ -51,7 +52,7 @@ const PRIVACY = [
       <li>To show you families going to the same places, and to send, match and confirm ride requests and offers.</li>
       <li>To provide ride features such as live tracking, QR check-in at pickup and drop-off, running-late alerts, SOS and notifications.</li>
       <li>To let you message and call other families without sharing phone numbers.</li>
-      <li>To verify drivers who choose to upload ID, and to help keep pools safe, including investigating reports and blocking misuse.</li>
+      <li>To check drivers who offer rides (license scan and background check), and to help keep pools safe, including investigating reports and blocking misuse.</li>
       <li>To provide support, send service messages, and improve and secure the Service.</li>
       <li>To comply with the law and enforce our Terms & Conditions.</li>
     </ul>,
@@ -60,20 +61,21 @@ const PRIVACY = [
     id: "share", title: "Who can see your information",
     body: <>
       <ul>
-        <li><strong>Families in your pool:</strong> families in the same pool can see your first name, your children’s first names, the places you share in common and a rough distance. They never see your exact address or phone number.</li>
+        <li><strong>Families in your pool:</strong> families in the same pool can see your first name, your children’s first names, the places you share in common and a rough distance. They see your address only after you book a ride with them, and never your phone number.</li>
         <li><strong>Families on a ride:</strong> when two families agree on a ride, both can see the details that ride needs: time, pickup and drop-off points, the children riding, the driver’s name and vehicle description, and live location while the ride is in progress.</li>
-        <li><strong>Service providers:</strong> companies that host our servers, send notifications and messages, provide maps, or help with support and analytics, under contracts that limit how they can use your data.</li>
+        <li><strong>School and venue staff:</strong> where staff check children in and out, they see the driver’s name and photo, the vehicle and plate, and the photos and first names of the children on that ride, so children are released only to the approved adult.</li>
+        <li><strong>Service providers:</strong> companies that host our servers, send notifications and messages, provide maps, run background checks, or help with support and analytics, under contracts that limit how they can use your data.</li>
         <li><strong>Legal and safety reasons:</strong> when required by law, or when we believe in good faith it is needed to protect someone’s safety, investigate fraud or misuse, or defend our legal rights.</li>
         <li><strong>Business changes:</strong> if KidPool is involved in a merger, acquisition or sale of assets, your information may be transferred, and this policy will continue to apply.</li>
       </ul>
-      <p><strong>We do not sell your personal information or share it for cross-context behavioral advertising.</strong></p>
+      <p><strong>We do not sell your personal information or share it for cross-context behavioral advertising.</strong> Our website does not currently use analytics or advertising tools. If we add any, we will name each one in this policy first, and they will respect your choices on the <a href={url("privacy-choices")}>Your Privacy Choices</a> page and the Global Privacy Control signal from your browser. We never use children’s information for advertising.</p>
     </>,
   },
   {
     id: "children", title: "Children’s privacy",
     body: <>
-      <p>KidPool is built for parents and guardians. Accounts are for adults aged 18 or over, and the Service is not directed to children. Children do not create accounts or use the app themselves.</p>
-      <p>A parent or guardian may add limited information about their own children (such as first name, age and the places they go) to arrange rides. We use this information only to provide the Service, and the parent can review, change or delete it at any time. If we learn that a child has given us personal information directly, we will delete it.</p>
+      <p>KidPool is built for parents and guardians. Accounts are for adults aged 18 or over, and everyone who creates one confirms they are a parent or legal guardian. The Service is not directed to children: children do not create accounts, log in or message anyone in the app.</p>
+      <p>A parent or guardian may add limited information about their own children (first name, age and grade, an optional photo, and their schools and activities) to arrange rides. A child’s photo helps the driver and school staff recognize the child; it is shown only to the driver of a booked ride and to staff at check-in and check-out, and you can remove it at any time. We use this information only to provide the Service, and the parent can review, change or delete it at any time. If we learn that a child has given us personal information directly, we will delete it.</p>
     </>,
   },
   {
@@ -86,7 +88,7 @@ const PRIVACY = [
         <li><strong>Notifications:</strong> choose which alerts you receive.</li>
         <li><strong>Delete your account:</strong> delete your account in the app or by contacting us. We delete or de-identify your data except where we must keep it for legal, safety or security reasons.</li>
       </ul>
-      <p>Depending on where you live, including in states such as California, Virginia and Colorado, you may have additional rights to know, access, correct, delete or obtain a copy of your personal information, and to not be discriminated against for using these rights. To make a request, contact us using the details below. We will verify your request before acting on it.</p>
+      <p>You can opt out of the sale or sharing of your personal information at any time on our <a href={url("privacy-choices")}>Your Privacy Choices</a> page, and we treat a Global Privacy Control signal from your browser as a valid opt-out. Depending on where you live, including in states such as California, Virginia and Colorado, you may have additional rights to know, access, correct, delete or obtain a copy of your personal information, and to not be discriminated against for using these rights. To make a request, contact us using the details below. We will verify your request before acting on it.</p>
     </>,
   },
   {
@@ -110,7 +112,7 @@ const PRIVACY = [
 const TERMS = [
   {
     id: "agreement", title: "Agreement to these terms",
-    body: <p>These Terms & Conditions (“Terms”) are an agreement between you and KidPool (“KidPool”, “we”, “us”) and govern your use of the KidPool website and mobile apps (the “Service”). By creating an account or using the Service, you agree to these Terms and to our Privacy Policy. If you do not agree, please do not use the Service.</p>,
+    body: <p>These Terms & Conditions (“Terms”) are an agreement between you and {OPERATOR} (“KidPool”, “we”, “us”) and govern your use of the KidPool website and mobile apps (the “Service”). By creating an account or using the Service, you agree to these Terms and to our Privacy Policy. If you do not agree, please do not use the Service.</p>,
   },
   {
     id: "what", title: "What KidPool is, and isn’t",
@@ -146,7 +148,7 @@ const TERMS = [
   },
   {
     id: "safety", title: "Safety features",
-    body: <p>KidPool offers features such as private phone numbers, live ride tracking, check-ins, running-late alerts, SOS, driver ID upload and block-and-report tools. These features help families coordinate, but they do not guarantee anyone’s identity, conduct or safety, and KidPool does not run background checks unless we clearly say so. In an emergency, always call 911 or your local emergency number.</p>,
+    body: <p>KidPool offers features such as private calls, live ride tracking, QR check-in and check-out, arrival and running-late alerts, SOS, driver’s license checks and background checks for drivers, and block-and-report tools. These features help families coordinate, but no check is perfect and they do not guarantee anyone’s identity, conduct or safety. In an emergency, always call 911 or your local emergency number.</p>,
   },
   {
     id: "conduct", title: "Pool rules",
@@ -197,8 +199,28 @@ const TERMS = [
   },
 ];
 
+const CHOICES = [
+  {
+    id: "summary", title: "Your choices at a glance",
+    body: <><p>KidPool does not sell your personal information or share it for cross-context behavioral advertising, and our website does not currently use analytics or advertising tools.</p><p>You can still record your choice below. It will apply to any advertising or cross-site tools we add in the future, and we will never use children’s information for advertising.</p></>,
+  },
+  {
+    id: "opt-out", title: "Opt out of sale or sharing",
+    body: <PrivacyChoices />,
+  },
+  {
+    id: "gpc", title: "Global Privacy Control",
+    body: <p>Global Privacy Control (GPC) is a setting in some browsers and extensions that tells websites you don’t want your information sold or shared. When your browser sends it, KidPool treats it as a valid opt-out automatically, with no extra steps.</p>,
+  },
+  {
+    id: "other", title: "Other privacy requests",
+    body: <><p>To ask what information we hold about you, or to correct or delete it, contact us using the details below. Learn more in our <a href={url("privacy")}>Privacy Policy</a>.</p><Contact /></>,
+  },
+];
+
 const PAGES = {
   privacy: { title: "Privacy Policy", intro: "How KidPool collects, uses and protects your family’s information.", sections: PRIVACY },
+  "privacy-choices": { title: "Your Privacy Choices", intro: "Opt out of the sale or sharing of your personal information, and see how we honor Global Privacy Control.", sections: CHOICES, dateLabel: "Last updated" },
   terms: { title: "Terms & Conditions", intro: "The rules for using KidPool to coordinate rides with families in your pool.", sections: TERMS },
 };
 
@@ -230,6 +252,7 @@ export default function Legal({ page }) {
           <nav className="lg__tabs" aria-label="Policies">
             <a href={url("privacy")} aria-current={page === "privacy" ? "page" : undefined} className={page === "privacy" ? "on" : ""}>Privacy Policy</a>
             <a href={url("terms")} aria-current={page === "terms" ? "page" : undefined} className={page === "terms" ? "on" : ""}>Terms & Conditions</a>
+            <a href={url("privacy-choices")} aria-current={page === "privacy-choices" ? "page" : undefined} className={page === "privacy-choices" ? "on" : ""}>Your Privacy Choices</a>
           </nav>
           <h1 className="lg__title">{doc.title}</h1>
           <p className="lg__intro">{doc.intro}</p>

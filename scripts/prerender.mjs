@@ -13,7 +13,7 @@ const dist = path.join(root, "dist");
 const ssrDir = path.join(root, "dist-ssr");
 const SITE = (loadEnv("production", root).VITE_SITE_URL || "https://www.kidpool.app").replace(/\/+$/, "");
 
-const { render, FAQS, SOCIAL, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS } =
+const { render, FAQS, SOCIAL, LEGAL_NAME, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS } =
   await import(pathToFileURL(path.join(ssrDir, "entry-server.js")).href);
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -23,6 +23,7 @@ const organization = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "KidPool",
+  ...(LEGAL_NAME ? { legalName: LEGAL_NAME } : {}),
   url: `${SITE}/`,
   logo: `${SITE}/icon-512.png`,
   email: CONTACT_EMAIL,
@@ -85,6 +86,12 @@ const ROUTES = [
     title: "Terms & Conditions | KidPool",
     description: "The rules for using KidPool to coordinate rides with families in your pool, including driver and parent responsibilities.",
     jsonld: [organization, crumbs("Terms & Conditions", "/terms")],
+  },
+  {
+    path: "/privacy-choices", out: "privacy-choices/index.html",
+    title: "Your Privacy Choices | KidPool",
+    description: "Opt out of the sale or sharing of your personal information on KidPool, and see how we honor Global Privacy Control.",
+    jsonld: [organization, crumbs("Your Privacy Choices", "/privacy-choices")],
   },
   // 404: what hosts serve for unknown addresses; never indexed
   { path: "/404", out: "404.html", title: "Page not found | KidPool", description: "This page could not be found.", noindex: true, jsonld: [] },

@@ -3,6 +3,12 @@ import Leaves from "../components/Leaves";
 import { useActive, Words } from "../components/Reveal";
 import { url } from "../lib/base";
 
+/* Registered company that operates KidPool, exactly as registered (e.g. "NFC Solutions USA LLC").
+   Leave empty until confirmed: pages then say "KidPool". Filling it updates the Privacy Policy,
+   Terms, footer and search-engine data. */
+export const LEGAL_NAME = "";
+export const OPERATOR = LEGAL_NAME ? `${LEGAL_NAME}, doing business as KidPool` : "KidPool";
+
 export const CONTACT_EMAIL = "info@nfcsolutionsusa.com";
 export const CONTACT_PHONE = "+1 (800) 965 5147";
 export const CONTACT_ADDRESS = "Saddlebrook Office Park, 11030 Jones Bridge Road, Suite 202, Johns Creek, GA 30022";
@@ -94,10 +100,11 @@ export default function Footer() {
         </div>
 
         <div className="sft__bottom rv-up" style={{ "--d": "1.1s" }}>
-          <p>© {year} KidPool. Made for family pools.</p>
+          <p>© {year} {LEGAL_NAME || "KidPool"}. Made for family pools.</p>
           <ul>
             <li><a href={url("privacy")}>Privacy Policy</a></li>
             <li><a href={url("terms")}>Terms & Conditions</a></li>
+            <li><a href={url("privacy-choices")}>Your Privacy Choices</a></li>
           </ul>
         </div>
       </div>

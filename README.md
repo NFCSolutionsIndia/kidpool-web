@@ -1,37 +1,57 @@
 # KidPool landing page
 
-React 18 + Vite + three.js. Every section has a 3D or interactive moment.
+React 18 + Vite + three.js marketing site for KidPool, the carpool app for parents. Pages are pre-rendered to real HTML at build time for search engines and fast first paint.
+
+Pages: Home, Privacy Policy (`/privacy`), Terms & Conditions (`/terms`), Your Privacy Choices (`/privacy-choices`) and a 404 page.
 
 ## Run it
 
 ```bash
 npm install
-npm run dev
+npm run dev        # development server (usually http://localhost:5173)
+npm run build      # client build + pre-render of every page into dist/
+npm run preview    # serve dist/ the way a static host would
 ```
 
-Open the address Vite prints (usually http://localhost:5173).
+`npm run build` runs three steps: the client build, a server build of `src/entry-server.jsx`, and `scripts/prerender.mjs`, which writes the HTML for each page plus `sitemap.xml` and `robots.txt`.
 
-Build for production with `npm run build`; the site lands in `dist/`.
+## Deploying
+
+- **Own domain:** set `VITE_SITE_URL` in `.env` (used for canonical links, the sitemap and share images), run `npm run build` and upload `dist/`.
+- **GitHub Pages:** `.github/workflows/deploy.yml` builds with `BASE_PATH=/kidpool-web/` and publishes to https://nfcsolutionsindia.github.io/kidpool-web/. Every image and link goes through `src/lib/base.js`, so the site works at a domain root or in a sub-folder.
+
+## Settings to fill in before launch
+
+| What | Where |
+|---|---|
+| Real domain | `VITE_SITE_URL` in `.env` (placeholder: https://www.kidpool.app) |
+| Registered company name | `LEGAL_NAME` in `src/sections/Footer.jsx` (fills the Privacy Policy, Terms, footer and search data) |
+| App Store and Google Play links | `APP_STORE_URL` and `PLAY_STORE_URL` in `src/sections/AppDownload.jsx` |
+| Social profile links | `SOCIAL` in `src/sections/Footer.jsx` (empty links show "Coming soon") |
+| Policy effective date | `EFFECTIVE_DATE` in `src/sections/Legal.jsx` |
+
+## Rules that keep the site compliant
+
+- **Safety claims** in `src/sections/Safety.jsx` follow the app design (Figma v3). Remove any claim for a feature that doesn't ship.
+- **No tracking scripts.** Any analytics or ad tag must load through `loadMarketingTag()` in `src/lib/consent.js`, which honors the visitor's opt-out and the Global Privacy Control signal. Name the tool in the Privacy Policy first.
+- **Motion can always be paused** (the "Pause animation" button beside the hero illustration) and respects reduced-motion settings.
+- Accessibility target: WCAG 2.1 AA (axe reports 0 violations on every page).
 
 ## Where things live
 
 ```
 src/
-  main.jsx              app entry
-  App.jsx               page order
-  sections/             one file per page section (Header, Hero, Trust, HowItWorks,
-                        Features, Preview, Safety, UseCases, FAQ, FinalCTA, Footer)
-  scenes/               three.js scenes (HeroScene, StepsScene, CommunityScene, TurntableScene)
-  hooks/useThreeScene.js   renderer setup, resize, pause off-screen, pointer + drag, cleanup
-  hooks/useTilt.js         CSS 3D tilt for cards and tiles
-  lib/threeKit.js          brand colours and toy-style 3D builders (car, house, school, tree)
-  components/ui.jsx        icons, wordmark, placeholder label
-  styles/kidpool.css       design tokens and all styles
+  main.jsx               app entry (hydrates the pre-rendered HTML)
+  entry-server.jsx       build-time renderer used by scripts/prerender.mjs
+  App.jsx                routes: home, privacy, terms, privacy-choices, 404
+  sections/              Header, Hero, Trust, HowItWorks, Features, Preview, Safety,
+                         UseCases, AppDownload, FAQ, Footer, Legal, NotFound
+  scenes/                three.js scenes (HeroScene, StepsScene, CommunityScene), loaded lazily
+  components/            ui (icons, wordmark), Reveal (entrance animations), PrivacyChoices, Leaves, JellyRadio
+  hooks/                 useThreeScene, useTilt, useMotionPause (site-wide pause)
+  lib/                   base (base path), brand (colors), consent (privacy choices),
+                         ripple (button click effect), threeKit (3D builders)
+  styles/kidpool.css     design tokens and all styles
+public/                  photos (WebP), app screenshots, icons, share image, web manifest
+scripts/prerender.mjs    writes each page's HTML, sitemap.xml and robots.txt
 ```
-
-## Before launch
-
-- Swap `--lime` in `src/styles/kidpool.css` (and `C.lime` in `src/lib/threeKit.js`) for the exact Figma colour token.
-- Replace every yellow "Placeholder:" label with confirmed product details.
-- Point the "Find your school" and "Log in" links at real routes.
-- Fonts load from Google Fonts (Bricolage Grotesque and Inter); swap in the Figma font if it differs.

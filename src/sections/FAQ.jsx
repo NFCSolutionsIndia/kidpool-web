@@ -10,10 +10,11 @@ export const FAQS = [
   ["Can I be in more than one pool?", "Yes. Join a pool for every place your family goes and see the rides for each of them in one place."],
   ["How do I request or offer a ride?", "Create a request with the time, route, and children, or offer a seat on a trip you’re already making. Families in your pool can respond."],
   ["Can I manage more than one child?", "Yes. Add each child and the places they go, then choose who’s included when you set up a ride."],
-  ["Do kids have their own accounts?", "No. Kids don’t have accounts and can’t use the app. Only a parent or guardian adds a child’s first name and schedule, and you can edit or delete it anytime."],
+  ["Do kids have their own accounts?", "No. Kids don’t have accounts and can’t use the app. Only a parent or guardian adds a child’s first name, age, schedule and an optional photo, and you can edit or delete it anytime."],
   ["How do I talk with other families?", "Through KidPool’s messages. You agree on the details of each ride with the other family, and everything stays in one place."],
   ["Which activities can I use KidPool for?", "Any trip your kids make with families you know: school drop-off and pickup, sports practice and games, music and dance lessons, clubs, tutoring and summer camp."],
-  ["Do other families see my home address?", "No. Families see first names and a rough distance, never your exact address or phone number."],
+  ["Do other families see my home address?", "Not while you’re arranging rides. Families see first names and a rough distance. Your address is shared only with the family you book a ride with, and phone numbers always stay private."],
+  ["Are drivers checked?", "Yes. Before anyone can offer rides, they scan their driver’s license and pass a background check. No check is perfect, so you still decide who your child rides with."],
   ["Are rides paid?", "No. Rides on KidPool are shared between families and are never offered for payment."],
   ["Is KidPool a taxi or ride-hailing service?", "No. KidPool helps families in the same pool share rides with each other. There are no hired drivers."],
 ];

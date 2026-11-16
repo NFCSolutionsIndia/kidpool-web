@@ -4,6 +4,6 @@ import { renderToString } from "react-dom/server";
 import App from "./App";
 
 export { FAQS } from "./sections/FAQ";
-export { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS, SOCIAL } from "./sections/Footer";
+export { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS, SOCIAL, LEGAL_NAME } from "./sections/Footer";
 
 export const render = (path) => renderToString(<App path={path} />);

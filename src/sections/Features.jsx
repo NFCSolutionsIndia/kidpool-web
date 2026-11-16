@@ -83,8 +83,8 @@ export default function Features() {
           <Feature i={0} featured icon="car" title="Request or offer rides" text="Post a ride you need, or share a seat on a trip you’re already making. Families in your pool can respond." />
           <Feature i={1} art={ArtKids} icon="child" title="More than one child" text="Keep each child’s places, schedules, and rides together." />
           <Feature i={2} art={ArtCalendar} icon="calendar" title="Activity schedules" text="See every practice, lesson, and pickup in one week view." />
-          <Feature i={3} art={ArtRepeat} icon="repeat" title="Recurring rides" text="Set up a regular ride once instead of arranging it every week." tag="Confirm: recurring rides supported" />
-          <Feature i={4} art={ArtChat} icon="message" title="Messages and updates" text="Talk through details and hear when a plan changes." tag="Confirm: in-app messaging supported" />
+          <Feature i={3} art={ArtRepeat} icon="repeat" title="Recurring rides" text="Set up a regular ride once instead of arranging it every week." />
+          <Feature i={4} art={ArtChat} icon="message" title="Messages and updates" text="Talk through details and hear when a plan changes." />
         </div>
       </div>
     </section>

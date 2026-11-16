@@ -16,15 +16,16 @@ const I = {
   block: <><circle cx="12" cy="12" r="8.5" /><path d="M6 18 18 6" className="acc-s" /></>,
 };
 const FEATURES = [
-  ["phone", "Private phone numbers", "Call other families in the app without sharing your number."],
-  ["calls", "You choose who can call", "Turn calls off, or limit them to families you’ve ridden with."],
-  ["home", "No home addresses shown", "Families see first names and rough distance — never your address."],
-  ["live", "Live ride tracking", "Follow every ride on the map from pickup to drop-off."],
-  ["qr", "Check-in at pickup & drop-off", "A quick QR check-in at each stop, and you’re notified straight away."],
-  ["sos", "SOS during a ride", "A one-tap emergency button whenever a ride is in progress."],
+  /* Wording describes what each feature does, never a guarantee of safety (FTC). Keep in step with the live app. */
+  ["phone", "Private calls", "Calls connect through KidPool, so your phone number is never shown."],
+  ["calls", "Calls are off by default", "Turn them on only if you want, and choose who can call: families you’ve ridden with or chatted with."],
+  ["home", "Your address stays private", "Families see first names and a rough distance. Your address is shared only with the family you book a ride with."],
+  ["live", "Live ride tracking", "Follow the car live from pickup to arrival, with automatic alerts when it reaches each stop."],
+  ["qr", "QR pass at the gate", "At schools and venues with staff, they scan the driver’s QR pass to check kids in and out, and parents are notified instantly."],
+  ["sos", "SOS during a ride", "One tap calls 911, alerts the child’s parents and shares live location with your emergency contacts."],
   ["late", "Running-late alerts", "Drivers can let everyone know about delays in one tap."],
-  ["id", "Driver ID check", "Drivers add a photo ID or license before offering rides."],
-  ["block", "Block or report", "Block or report anyone, any time. You stay in control."],
+  ["id", "Verified Ride Partners", "Drivers scan their driver’s license and pass a background check before they can offer rides."],
+  ["block", "Block or report", "Blocking a family works both ways, instantly. Report a safety concern to our team any time."],
 ];
 function SafetyFeatures() {
   const [ref, active] = useActive("0px 0px -10% 0px");
@@ -42,6 +43,7 @@ function SafetyFeatures() {
           </li>
         ))}
       </ul>
+      <p className="sfeat__note rv-up" style={{ "--d": "1s" }}>Features can vary by app version. No check is perfect, so you always decide who your child rides with. In an emergency, always call 911.</p>
     </div>
   );
 }
