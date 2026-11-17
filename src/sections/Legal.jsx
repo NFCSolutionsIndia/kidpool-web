@@ -63,7 +63,7 @@ const PRIVACY = [
         <li><strong>Families in your pool:</strong> families in the same pool can see your first name, your children’s first names, the places you share in common and a rough distance. They see your address only after you book a ride with them, and never your phone number.</li>
         <li><strong>Families on a ride:</strong> when two families agree on a ride, both can see the details that ride needs: time, pickup and drop-off points, the children riding, the driver’s name and vehicle description, and live location while the ride is in progress.</li>
         <li><strong>School and venue staff:</strong> where staff check children in and out, they see the driver’s name and photo, the vehicle and plate, and the photos and first names of the children on that ride, so children are released only to the approved adult.</li>
-        <li><strong>Service providers:</strong> companies that host our servers, send notifications and messages, provide maps, run background checks, or help with support and analytics, under contracts that limit how they can use your data.</li>
+        <li><strong>Service providers:</strong> companies that host our servers, send notifications and messages, provide maps, run background checks, or help with support and analytics, under contracts that limit how they can use your data. A list of our service providers is available on request.</li>
         <li><strong>Legal and safety reasons:</strong> when required by law, or when we believe in good faith it is needed to protect someone’s safety, investigate fraud or misuse, or defend our legal rights.</li>
         <li><strong>Business changes:</strong> if KidPool is involved in a merger, acquisition or sale of assets, your information may be transferred, and this policy will continue to apply.</li>
       </ul>
@@ -87,16 +87,22 @@ const PRIVACY = [
         <li><strong>Notifications:</strong> choose which alerts you receive.</li>
         <li><strong>Delete your account:</strong> delete your account in the app or by contacting us. We delete or de-identify your data except where we must keep it for legal, safety or security reasons.</li>
       </ul>
-      <p>You can opt out of the sale or sharing of your personal information at any time by contacting us using the details below, and we treat a Global Privacy Control signal from your browser as a valid opt-out. Depending on where you live, including in states such as California, Virginia and Colorado, you may have additional rights to know, access, correct, delete or obtain a copy of your personal information, and to not be discriminated against for using these rights. To make a request, contact us using the details below. We will verify your request before acting on it.</p>
+      <p>You can opt out of the sale or sharing of your personal information at any time by contacting us using the details below, and we treat a Global Privacy Control signal from your browser as a valid opt-out. Depending on where you live, including in states such as California, Virginia and Colorado, you may have additional rights to know, access, correct, delete or obtain a copy of your personal information, and to not be discriminated against for using these rights.</p>
+      <h4>How to make a request</h4>
+      <ul>
+        <li><strong>Send it:</strong> contact us using the details below. We will verify your identity before acting on it.</li>
+        <li><strong>Response times:</strong> we confirm we received your request within 10 business days and respond within 45 days. If we need more time, as the law allows, we will tell you why and how much longer it will take.</li>
+        <li><strong>Appeals:</strong> if we deny your request, you can appeal by emailing <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with “Privacy appeal” in the subject line. We will respond to your appeal within 45 days and explain our decision. If you disagree with the outcome, you may contact your state attorney general.</li>
+      </ul>
     </>,
   },
   {
     id: "retention", title: "How long we keep information",
-    body: <p>We keep your information for as long as your account is active and as needed to provide the Service. Ride history and messages are kept so families can refer back to past plans, and live location from a ride is kept only for a short period after the ride ends for safety and support purposes. When you delete your account, we delete or de-identify your information within a reasonable time, unless the law requires us to keep it longer.</p>,
+    body: <p>We keep your information for as long as your account is active and as needed to provide the Service. Ride history and messages are kept so families can refer back to past plans, and live location from a ride is kept for safety and support purposes, then automatically and permanently deleted within 30 days after the ride ends. When you delete your account, we delete or de-identify your information within a reasonable time, unless the law requires us to keep it longer.</p>,
   },
   {
     id: "security", title: "How we protect information",
-    body: <p>We use administrative, technical and physical safeguards designed to protect your information, including encryption in transit, access controls and private phone numbers for in-app calls. No system is completely secure, so please keep your sign-in details private and contact us immediately if you think your account has been compromised.</p>,
+    body: <p>We use administrative, technical and physical safeguards designed to protect your information, including TLS 1.3 encryption for data in transit, AES-256 encryption for all databases and stored files, access controls, and private phone numbers for in-app calls and messages. No system is completely secure, so please keep your sign-in details private and contact us immediately if you think your account has been compromised.</p>,
   },
   {
     id: "changes", title: "Changes to this policy",
@@ -134,10 +140,10 @@ const TERMS = [
     body: <>
       <p>If you offer or give a ride, you confirm and agree that you:</p>
       <ul>
-        <li>hold a valid driver’s license and drive a vehicle that is registered, roadworthy and covered by insurance as required by law;</li>
-        <li>will follow all traffic laws, and all child passenger safety laws, including appropriate car seats, booster seats and seat belts for each child;</li>
-        <li>will not drive while impaired, distracted or using your phone in a way the law does not allow;</li>
-        <li>will check your own insurance cover for carpooling, which remains your responsibility.</li>
+        <li>hold a current, valid driver’s license and drive a vehicle that is properly registered, roadworthy and covered by personal auto liability insurance that meets or exceeds your state’s requirements;</li>
+        <li>will follow all traffic laws and child passenger safety laws, including making sure every child is secured in an age-appropriate car seat, booster seat or seat belt that meets your state’s rules;</li>
+        <li>will not drive while impaired by alcohol, drugs or medication, or while distracted or using your phone in a way the law does not allow;</li>
+        <li>understand that your own auto insurance is the primary cover for any ride you give, and will check that your insurer covers non-commercial carpooling.</li>
       </ul>
     </>,
   },
@@ -147,7 +153,7 @@ const TERMS = [
   },
   {
     id: "safety", title: "Safety features",
-    body: <p>KidPool offers features such as private calls, live ride tracking, QR check-in and check-out, arrival and running-late alerts, SOS, driver’s license checks and background checks for drivers, and block-and-report tools. These features help families coordinate, but no check is perfect and they do not guarantee anyone’s identity, conduct or safety. In an emergency, always call 911 or your local emergency number.</p>,
+    body: <p>KidPool offers features such as private calls, live ride tracking, QR check-in and check-out, arrival and running-late alerts, SOS, driver’s license checks and background checks for drivers, and block-and-report tools. Background checks review the records available at the time of the check; they cannot predict how anyone will behave in the future. These features help families coordinate, but no check is perfect and they do not guarantee anyone’s identity, conduct or safety. Parents and guardians remain responsible for deciding who their child rides with. In an emergency, always call 911 or your local emergency number.</p>,
   },
   {
     id: "conduct", title: "Pool rules",
@@ -161,7 +167,7 @@ const TERMS = [
         <li>misuse the SOS, reporting or messaging features;</li>
         <li>interfere with, copy, reverse-engineer or attempt to gain unauthorized access to the Service.</li>
       </ul>
-      <p>You can block or report anyone at any time. We may review reports and take action, including removing content or suspending accounts.</p>
+      <p>You can block or report anyone at any time. We may review reports and take action, including removing content or suspending accounts. If a report involves a child’s safety, impaired driving or illegal conduct, we may immediately suspend the reported account while we investigate. We may cooperate with law enforcement and with schools or other organizations involved when investigating a safety incident.</p>
     </>,
   },
   {
@@ -186,7 +192,10 @@ const TERMS = [
   },
   {
     id: "law", title: "Governing law",
-    body: <p>These Terms are governed by the laws of the State of Georgia, USA, without regard to conflict-of-law rules. Any dispute will be handled in the state or federal courts located in Georgia, unless the law where you live requires otherwise.</p>,
+    body: <>
+      <p>These Terms are governed by the laws of the State of Georgia, USA, without regard to conflict-of-law rules.</p>
+      <p>Before starting any formal legal proceeding, you and KidPool agree to try to resolve the dispute informally. Send a written description of the dispute to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. If it is not resolved within 30 days, either side may proceed. Any dispute will be handled in the state or federal courts located in Georgia, unless the law where you live requires otherwise. Either side may bring a qualifying claim in small claims court.</p>
+    </>,
   },
   {
     id: "changes", title: "Changes to these terms",

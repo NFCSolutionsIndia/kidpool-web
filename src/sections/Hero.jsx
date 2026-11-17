@@ -22,11 +22,11 @@ export default function Hero() {
       <div className="container hero__grid">
         <div className={"hero__copy rv" + (active ? " rv--in" : "")} ref={copyRef}>
           <span className="accent-bar" aria-hidden="true" />
-          <p className="hero__eyebrow rv-up" style={{ "--d": ".2s" }}><span className="hero__eyebrow-dot" />Made for family pools</p>
-          <h1 className="display-xl rv-title" aria-label="Kid rides are easier together.">
-            <Words lines={["Kid rides are", "easier together."]} highlight={{ word: "together.", className: "hero__mark" }} />
+          <p className="hero__eyebrow rv-up" style={{ "--d": ".2s" }}><span className="hero__eyebrow-dot" />Kids ride. Parents decide.</p>
+          <h1 className="display-xl rv-title" aria-label="Trusted carpools with parents you know.">
+            <Words lines={["Trusted carpools with", "parents you know."]} highlight={{ word: "know.", className: "hero__mark" }} />
           </h1>
-          <p className="lede rv-up" style={{ "--d": ".95s" }}>Join a pool with families you already know and share your kids’ rides. Wherever your children need to be, ask for a ride, offer a spare seat, and agree on the details together.</p>
+          <p className="lede rv-up" style={{ "--d": ".95s" }}>Take the stress out of the morning school run, soccer practice, tutoring, and music lessons. Coordinate rides with families from your neighborhood, school, or team, without the endless group texts.</p>
           <div className="btn-row rv-up rv-up--pop" style={{ "--d": "1.15s" }}>
             <a href={appStore} onClick={getApp} className="btn btn--lime">Get the app</a>
             <a href="#how" className="btn btn--ghost">See how it works</a>
@@ -36,7 +36,7 @@ export default function Hero() {
               <li key={t} className="rv-chip" style={{ "--i": i }}><span>{i + 1}</span>{t}</li>
             ))}
           </ul>
-          <p className="hero__note rv-up" style={{ "--d": "1.75s" }}>For families who already know each other. KidPool isn’t a public ride service.</p>
+          <p className="hero__note rv-up" style={{ "--d": "1.75s" }}>A private carpool network, not a public rideshare.</p>
         </div>
         <figure className={"hero__visual hv" + (visActive ? " hv--in" : "")} ref={visRef}>
           <div className="hero__stage">

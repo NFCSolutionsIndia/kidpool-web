@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="sft__grid">
           <div className="sft__brand">
             <span className="rv-up" style={{ "--d": ".05s", display: "inline-block" }}><Wordmark /></span>
-            <p className="sft__tag rv-title"><span className="sr-only">Kid rides are easier together.</span><Words lines={["Kid rides are easier", "together."]} highlight={{ word: "together.", className: "sft__mark" }} /></p>
+            <p className="sft__tag rv-title"><span className="sr-only">Trusted carpools with parents you know.</span><Words lines={["Trusted carpools with", "parents you know."]} highlight={{ word: "know.", className: "sft__mark" }} /></p>
             <p className="sft__lede rv-up" style={{ "--d": ".75s" }}>Share every kid ride with families you already know.</p>
             <ul className="sft__social" aria-label="KidPool on social media">
               {SOCIAL.map((s, i) => (
@@ -64,7 +64,7 @@ export default function Footer() {
 
           <div className="sft__col" id="about">
             <h2 className="sft__h rv-up" style={{ "--d": ".25s" }}>About</h2>
-            <p className="rv-up" style={{ "--d": ".4s" }}>KidPool helps parents and guardians coordinate rides with families they already know, in their own pools. It isn’t a public ride service. Every ride is agreed by both families.</p>
+            <p className="rv-up" style={{ "--d": ".4s" }}>A private carpool network for parents and guardians. Rides are shared only within your pools, drivers are checked, and both families confirm every ride.</p>
             <ul className="sft__links">
               <li className="rv-up sft__li" style={{ "--d": "0.60s" }}><a href={url("#how")}>How it works</a></li>
               <li className="rv-up sft__li" style={{ "--d": "0.69s" }}><a href={url("#families")}>For families</a></li>

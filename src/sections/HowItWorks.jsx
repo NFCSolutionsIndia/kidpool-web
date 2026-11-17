@@ -7,10 +7,10 @@ import { StepsScene } from "../scenes/lazy";
 
 /* ================= 4. HOW IT WORKS — cinematic, four-scene story ================= */
 export const STEPS = [
-  { icon: "together", title: "Join a pool", text: "Join a pool for each place your kids go, so you’re coordinating with families you know." },
+  { icon: "together", title: "Join a pool", text: "Join the pool for your kids’ elementary school, soccer club, or music studio, or request one for your group." },
   { icon: "child", title: "Add your children", text: "Add each child and the activities they go to, so rides match real schedules." },
-  { icon: "seat", title: "Request or offer a seat", text: "Ask for a ride when you need one, or share an empty seat when you’re already going." },
-  { icon: "check", title: "Review and coordinate", text: "Check the time, route, and children, then confirm the plan with the other family." },
+  { icon: "seat", title: "Ask for a ride or offer a seat", text: "Stuck on a late work call? Post a request with the time and place. Already making the drive? Offer your open seats." },
+  { icon: "check", title: "Review and confirm together", text: "Check the driver, car details, and route. Nothing is locked in until both parents review and tap confirm." },
 ];
 const SCENE_MS = 4200;
 

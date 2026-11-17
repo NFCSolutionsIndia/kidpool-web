@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 /* true while the element is "active" (inside the middle band of the viewport).
    Flips back to false when it leaves, so entrance animations replay each visit. */
@@ -27,10 +27,15 @@ export function Words({ lines, start = 0, highlight }) {
       {line.split(" ").map((w, i) => {
         const idx = n++;
         const hl = highlight && w === highlight.word;
+        // a real space between words: copies and search engines read normal text,
+        // and a wrapped line doesn't start with a leftover gap
         return (
-          <span className="rv-mask" key={w + i}>
-            <span className={"rv-w" + (hl ? " " + highlight.className : "")} style={{ "--i": idx }}>{w}</span>
-          </span>
+          <Fragment key={w + i}>
+            {i > 0 && " "}
+            <span className="rv-mask">
+              <span className={"rv-w" + (hl ? " " + highlight.className : "")} style={{ "--i": idx }}>{w}</span>
+            </span>
+          </Fragment>
         );
       })}
     </span>

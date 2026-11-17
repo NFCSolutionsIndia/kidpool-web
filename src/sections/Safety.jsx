@@ -19,12 +19,9 @@ const FEATURES = [
   /* Wording describes what each feature does, never a guarantee of safety (FTC). Keep in step with the live app. */
   ["phone", "Private calls", "Calls connect through KidPool, so your phone number is never shown."],
   ["calls", "Calls are off by default", "Turn them on only if you want, and choose who can call: families you’ve ridden with or chatted with."],
-  ["home", "Your address stays private", "Families see first names and a rough distance. Your address is shared only with the family you book a ride with."],
-  ["live", "Live ride tracking", "Follow the car live from pickup to arrival, with automatic alerts when it reaches each stop."],
-  ["qr", "QR pass at the gate", "At schools and venues with staff, they scan the driver’s QR pass to check kids in and out, and parents are notified instantly."],
-  ["sos", "SOS during a ride", "One tap calls 911, alerts the child’s parents and shares live location with your emergency contacts."],
+  /* Address privacy, live tracking, SOS and driver checks are covered by the points above the grid.
+     QR check-in is held back until schools or venues have agreed to use it. */
   ["late", "Running-late alerts", "Drivers can let everyone know about delays in one tap."],
-  ["id", "Verified Ride Partners", "Drivers scan their driver’s license and pass a background check before they can offer rides."],
   ["block", "Block or report", "Blocking a family works both ways, instantly. Report a safety concern to our team any time."],
 ];
 function SafetyFeatures() {
@@ -32,10 +29,9 @@ function SafetyFeatures() {
   return (
     <div className={"sfeat rv" + (active ? " rv--in" : "")} ref={ref}>
       <div className="sfeat__head rv-up" style={{ "--d": ".1s" }}>
-        <h3 className="sfeat__title">Built-in safety features</h3>
-        <p className="sfeat__sub">Designed for parents, from the first message to the drop-off.</p>
+        <h3 className="sfeat__title">More built-in safety features</h3>
       </div>
-      <ul className="sfeat__grid">
+      <ul className="sfeat__grid sfeat__grid--4">
         {FEATURES.map(([icon, title, text], i) => (
           <li key={title} className="sfeat__card rv-up" style={{ "--d": `${0.25 + i * 0.08}s` }}>
             <span className="sfeat__icon"><svg viewBox="0 0 24 24" aria-hidden="true">{I[icon]}</svg></span>
@@ -75,12 +71,13 @@ export default function Safety() {
         </div>
         <div className="safety__copy">
           <span className="accent-bar rv-up" style={{ "--d": ".1s" }} aria-hidden="true" />
-          <h2 className="display-l rv-title" aria-label="You stay in control"><Words lines={["You stay in control"]} /></h2>
-          <p className="lede rv-up" style={{ "--d": ".55s" }}>KidPool is for coordinating rides within your own pools, not with strangers on a public app. Every ride is something you choose to ask for or offer.</p>
+          <h2 className="display-l rv-title" aria-label="Your circle, backed by built-in safety"><Words lines={["Your circle, backed", "by built-in safety"]} /></h2>
+          <p className="lede rv-up" style={{ "--d": ".55s" }}>KidPool isn’t a public rideshare. It’s a private carpool network built around your family’s real-life community. Whether you’re trading off drives with neighbors or parents on the same soccer team, every driver is checked and every ride needs your approval.</p>
           <ul className="points">
-            <li className="rv-up sp" style={{ "--d": ".8s" }}><Icon name="together" /><div><h3>Your pool, not the public</h3><p>Rides are arranged only among families in the same pool, never with the public.</p></div></li>
-            <li className="rv-up sp" style={{ "--d": ".95s" }}><Icon name="check" /><div><h3>Nothing happens without you</h3><p>Families review each request or offer and confirm before a ride goes ahead.</p></div></li>
-            <li className="rv-up sp" style={{ "--d": "1.1s" }}><Icon name="route" /><div><h3>Clear details every time</h3><p>Time, pickup, drop-off, and children are on every ride, so nobody has to guess.</p></div></li>
+            <li className="rv-up sp" style={{ "--d": ".8s" }}><Icon name="together" /><div><h3>Private pools, never the public</h3><p>Join the pool for your child’s school, team, or program, or request one for your own group. Rides are arranged only among families in the same pool.</p></div></li>
+            <li className="rv-up sp" style={{ "--d": ".95s" }}><Icon name="check" /><div><h3>Background-checked drivers</h3><p>Every parent who offers a ride scans their driver’s license and passes a background check before taking the wheel.</p></div></li>
+            <li className="rv-up sp" style={{ "--d": "1.1s" }}><Icon name="control" /><div><h3>Address privacy by default</h3><p>Pool members see only first names and a rough distance. Your address is shared only with the family you book a ride with, and your phone number is never shown.</p></div></li>
+            <li className="rv-up sp" style={{ "--d": "1.25s" }}><Icon name="route" /><div><h3>Live tracking &amp; 911 SOS</h3><p>Follow the car from pickup to drop-off with arrival alerts, and one tap calls 911 during a ride.</p></div></li>
           </ul>
         </div>
       </div>
