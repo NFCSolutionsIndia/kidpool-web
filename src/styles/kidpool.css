@@ -1264,7 +1264,7 @@ button{font:inherit;color:inherit}
 .cine .display-l.rv-title{background:none;-webkit-text-fill-color:currentColor}
 .cine .display-l .rv-w{background:linear-gradient(180deg,#fff 30%,rgba(255,255,255,.55));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-bottom:.06em}
 
-/* Where KidPool fits: cards tip up into place one after another, icons pop */
+/* Where KidsPool fits: cards tip up into place one after another, icons pop */
 .rv .fc{opacity:0}
 .rv--in .fc{animation:cardTip 1s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--d)}
 @keyframes cardTip{from{opacity:0;transform:perspective(900px) translateY(56px) rotateX(-22deg) scale(.96)}to{opacity:1;transform:none}}

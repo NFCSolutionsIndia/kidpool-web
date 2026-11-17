@@ -1,4 +1,4 @@
-# KidPool — Compliance Checkpoints
+# KidsPool — Compliance Checkpoints
 
 As of November 13, 2026
 
@@ -13,7 +13,7 @@ This is practical guidance, not legal advice. A US lawyer should review the fina
 | # | Checkpoint (passes when…) | How to verify | Sign-off | Status |
 |---|---|---|---|---|
 | 1.1 | The registered company's exact legal name and type are confirmed in writing | Matches the Georgia Secretary of State business record | Team | Not started |
-| 1.2 | Privacy Policy and Terms name that company, not just "KidPool" | Open `/privacy` and `/terms`; the first paragraph of each shows the legal name (`Legal.jsx` lines 21 and 112) | Dev | Not started |
+| 1.2 | Privacy Policy and Terms name that company, not just "KidsPool" | Open `/privacy` and `/terms`; the first paragraph of each shows the legal name (`Legal.jsx` lines 21 and 112) | Dev | Not started |
 | 1.3 | The effective date equals the real go-live date | The date at the top of both pages matches the launch date (`Legal.jsx` line 7) | Dev | Not started |
 | 1.4 | Governing law (Georgia) is confirmed | Lawyer's written OK; Terms clause matches (`Legal.jsx` line 187) | Lawyer | Not started |
 
@@ -73,7 +73,7 @@ This is practical guidance, not legal advice. A US lawyer should review the fina
 | # | Checkpoint (passes when…) | How to verify | Sign-off | Status |
 |---|---|---|---|---|
 | 7.1 | The lawyer has approved the final Privacy Policy and Terms | Written approval on file, dated after Steps 1 to 3 passed | Lawyer | Not started |
-| 7.2 | A USPTO trademark search for "KidPool" is done, with no blocking conflict | Search report on file; lawyer's view on any conflicts | Team + Lawyer | Not started |
+| 7.2 | A USPTO trademark search for "KidsPool" is done, with no blocking conflict | Search report on file; lawyer's view on any conflicts | Team + Lawyer | Not started |
 | 7.3 | App Store and Google Play privacy labels match the Privacy Policy | Compare each label item with the policy | Team | Not started |
 | 7.4 | Every marketing email has an unsubscribe link and the postal address | Send a test email; check the footer | Team | Not started |
 | 7.5 | Marketing texts are sent only with written consent, and "STOP" works | Test the sign-up form and reply STOP from a test phone | Team | Not started |

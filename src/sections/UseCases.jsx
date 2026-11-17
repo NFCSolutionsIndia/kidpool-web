@@ -4,7 +4,7 @@ import { useActive, Words } from "../components/Reveal";
 import { getApp, useAppHref } from "./AppDownload";
 import { url } from "../lib/base";
 
-/* ================= 8. USE CASES — cinematic poster cards (flip to see how KidPool helps) ================= */
+/* ================= 8. USE CASES — cinematic poster cards (flip to see how KidsPool helps) ================= */
 const CASES = [
   {
     img: url("illustrations/hero-dropoff.webp"), pos: "62% 60%", icon: "repeat", front: "The regular drop-off", sub: "Same place, same time, every week.",
@@ -33,7 +33,7 @@ function FlipCard({ c, i }) {
       <div className="flip__inner">
         {/* front: the whole poster flips the card */}
         <button type="button" className="flip__face flip__front cin__front" onClick={() => flip(true)}
-          aria-hidden={flipped} tabIndex={flipped ? -1 : 0} aria-label={`${c.front}. ${c.sub} Show how KidPool helps`}>
+          aria-hidden={flipped} tabIndex={flipped ? -1 : 0} aria-label={`${c.front}. ${c.sub} Show how KidsPool helps`}>
           <span className="cin__media"><img src={c.img} alt="" loading="lazy" style={{ objectPosition: c.pos }} /></span>
           <span className="cin__shade" />
           <span className="cin__shine" />
@@ -43,7 +43,7 @@ function FlipCard({ c, i }) {
           <span className="cin__body">
             <span className="flip__title cin__title">{c.front}</span>
             <span className="flip__sub cin__sub">{c.sub}</span>
-            <span className="cin__cta">How KidPool helps <span className="cin__arrow">→</span></span>
+            <span className="cin__cta">How KidsPool helps <span className="cin__arrow">→</span></span>
           </span>
         </button>
 
@@ -51,7 +51,7 @@ function FlipCard({ c, i }) {
         <div className="flip__face flip__back cin__back" aria-hidden={!flipped} inert={!flipped ? "" : undefined}>
           <span className="cin__backimg"><img src={c.img} alt="" loading="lazy" style={{ objectPosition: c.pos }} /></span>
           <div className="cin__backin">
-            <p className="cin__eyebrow"><span className="cin__check"><Icon name="check" size={16} /></span>How KidPool helps</p>
+            <p className="cin__eyebrow"><span className="cin__check"><Icon name="check" size={16} /></span>How KidsPool helps</p>
             <h3 className="flip__title">{c.front}</h3>
             <p className="cin__lead">{c.back}</p>
             <ol className="cin__steps">
@@ -85,8 +85,8 @@ export default function UseCases() {
       <div className={"container rv" + (active ? " rv--in" : "")} ref={ref}>
         <div className="section__head">
           <span className="accent-bar rv-up" style={{ "--d": ".1s" }} aria-hidden="true" />
-          <h2 className="display-l rv-title" aria-label="Where KidPool fits"><Words lines={["Where KidPool fits"]} /></h2>
-          <p className="lede rv-up" style={{ "--d": ".6s" }}>Real weeks rarely go to plan. Turn a card to see how families use KidPool in each case.</p>
+          <h2 className="display-l rv-title" aria-label="Where KidsPool fits"><Words lines={["Where KidsPool fits"]} /></h2>
+          <p className="lede rv-up" style={{ "--d": ".6s" }}>Real weeks rarely go to plan. Turn a card to see how families use KidsPool in each case.</p>
         </div>
         <ul className="flips">{CASES.map((c, i) => <FlipCard key={c.front} c={c} i={i} />)}</ul>
       </div>

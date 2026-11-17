@@ -1,6 +1,6 @@
 {
-  "name": "KidPool",
-  "short_name": "KidPool",
+  "name": "KidsPool",
+  "short_name": "KidsPool",
   "description": "The carpool app for parents. Share every kid ride with families you already know.",
   "start_url": "./",
   "display": "browser",

@@ -73,10 +73,10 @@ export function StoreBadges() {
   const ext = LINKS_READY ? { target: "_blank", rel: "noopener noreferrer" } : {};
   return (
     <div className="stores">
-      <a className="store" href={PLAY_STORE_URL} {...ext} aria-label="Get KidPool on Google Play">
+      <a className="store" href={PLAY_STORE_URL} {...ext} aria-label="Get KidsPool on Google Play">
         <PlayLogo /><span><small>GET IT ON</small><b>Google Play</b></span>
       </a>
-      <a className="store" href={APP_STORE_URL} {...ext} aria-label="Download KidPool on the App Store">
+      <a className="store" href={APP_STORE_URL} {...ext} aria-label="Download KidsPool on the App Store">
         <AppleLogo /><span><small>Download on the</small><b>App Store</b></span>
       </a>
     </div>
@@ -164,8 +164,8 @@ export default function AppDownload() {
 
           <div className={"appdl__copy" + (copyIn ? " appdl__copy--in" : "")} ref={copyRef}>
             <span className="accent-bar" aria-hidden="true" />
-            <p className="appdl__kicker"><span className="sr-only">KidPool for Android and iPhone</span>
-              {"KidPool for Android & iPhone".split("").map((ch, i) => (
+            <p className="appdl__kicker"><span className="sr-only">KidsPool for Android and iPhone</span>
+              {"KidsPool for Android & iPhone".split("").map((ch, i) => (
                 <span key={i} aria-hidden="true" style={{ "--i": i }}>{ch === " " ? "\u00A0" : ch}</span>
               ))}
             </p>
@@ -214,7 +214,7 @@ export default function AppDownload() {
               ref={stageRef}
               role="region"
               aria-roledescription="carousel"
-              aria-label="KidPool app screens. Use the left and right arrow keys to browse."
+              aria-label="KidsPool app screens. Use the left and right arrow keys to browse."
               tabIndex={0}
               onKeyDown={onKey}
               onMouseEnter={() => setHover(true)}
@@ -242,7 +242,7 @@ export default function AppDownload() {
                     onClick={() => { if (off !== 0 && Math.abs(drag.current.dx) < 6) go(off); }}
                   >
                     <div className="aphone">
-                      <img className="aphone__screen" src={src} alt={off === 0 ? `KidPool app: ${title}` : ""} width="390" height="844" loading="lazy" draggable="false" />
+                      <img className="aphone__screen" src={src} alt={off === 0 ? `KidsPool app: ${title}` : ""} width="390" height="844" loading="lazy" draggable="false" />
                       <span className="aphone__island" />
                       <span className="aphone__glare" />
                     </div>

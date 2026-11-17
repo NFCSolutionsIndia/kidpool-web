@@ -22,7 +22,7 @@ const ld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).re
 const organization = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "KidPool",
+  name: "KidsPool",
   ...(LEGAL_NAME ? { legalName: LEGAL_NAME } : {}),
   url: `${SITE}/`,
   logo: `${SITE}/icon-512.png`,
@@ -40,17 +40,17 @@ const organization = {
   ...(SOCIAL.some((x) => x.url) ? { sameAs: SOCIAL.filter((x) => x.url).map((x) => x.url) } : {}),
   contactPoint: { "@type": "ContactPoint", contactType: "customer support", email: CONTACT_EMAIL, telephone: CONTACT_PHONE, areaServed: "US", availableLanguage: "English" },
 };
-const website = { "@context": "https://schema.org", "@type": "WebSite", name: "KidPool", url: `${SITE}/` };
+const website = { "@context": "https://schema.org", "@type": "WebSite", name: "KidsPool", url: `${SITE}/` };
 const app = {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
-  name: "KidPool",
+  name: "KidsPool",
   operatingSystem: "Android, iOS",
   applicationCategory: "LifestyleApplication",
   description: "Carpool app for parents: share school, sports and activity rides with families you already know.",
   url: `${SITE}/`,
   image: `${SITE}/og-image.jpg`,
-  publisher: { "@type": "Organization", name: "KidPool" },
+  publisher: { "@type": "Organization", name: "KidsPool" },
 };
 const faqPage = {
   "@context": "https://schema.org",
@@ -69,26 +69,26 @@ const crumbs = (name, p) => ({
 const ROUTES = [
   {
     path: "/", out: "index.html",
-    title: "KidPool: Carpool App for Parents | School & Activity Rides",
-    description: "KidPool is the carpool app for parents. Share school, sports and activity rides with families you already know. Ask for a ride, offer a seat, track pickups live.",
-    ogTitle: "KidPool: Carpool App for Parents",
+    title: "KidsPool: Kids Carpool App for School, Sports & Activities",
+    description: "KidsPool is the carpool app for parents. Share school, sports and activity rides with families you already know. Ask for a ride, offer a seat, track pickups live.",
+    ogTitle: "KidsPool: Kids' Carpool App for Parents",
     ogDescription: "Share school, sports and activity rides with families you already know.",
     jsonld: [organization, website, app, faqPage],
   },
   {
     path: "/privacy", out: "privacy/index.html",
-    title: "Privacy Policy | KidPool",
-    description: "How KidPool collects, uses and protects your family's information, including children's details and ride location data, and the choices you have.",
+    title: "Privacy Policy | KidsPool",
+    description: "How KidsPool collects, uses and protects your family's information, including children's details and ride location data, and the choices you have.",
     jsonld: [organization, crumbs("Privacy Policy", "/privacy")],
   },
   {
     path: "/terms", out: "terms/index.html",
-    title: "Terms & Conditions | KidPool",
-    description: "The rules for using KidPool to coordinate rides with families in your pool, including driver and parent responsibilities.",
+    title: "Terms & Conditions | KidsPool",
+    description: "The rules for using KidsPool to coordinate rides with families in your pool, including driver and parent responsibilities.",
     jsonld: [organization, crumbs("Terms & Conditions", "/terms")],
   },
   // 404: what hosts serve for unknown addresses; never indexed
-  { path: "/404", out: "404.html", title: "Page not found | KidPool", description: "This page could not be found.", noindex: true, jsonld: [] },
+  { path: "/404", out: "404.html", title: "Page not found | KidsPool", description: "This page could not be found.", noindex: true, jsonld: [] },
 ];
 
 const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");

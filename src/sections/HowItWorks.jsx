@@ -77,7 +77,7 @@ export default function HowItWorks() {
             <Timecode running={inView} />
           </div>
           <div className="cine__bar cine__bar--bottom" aria-hidden="true">
-            <span>KIDPOOL · EVERY KID RIDE</span>
+            <span>KIDSPOOL · EVERY KID RIDE</span>
             <span>SCENE {String(step + 1).padStart(2, "0")} / 04</span>
           </div>
           <div className="cine__titlecard" key={step} aria-live="polite">

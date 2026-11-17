@@ -3,11 +3,11 @@ import Leaves from "../components/Leaves";
 import { useActive, Words } from "../components/Reveal";
 import { url } from "../lib/base";
 
-/* Registered company that operates KidPool, exactly as registered (e.g. "NFC Solutions USA LLC").
-   Leave empty until confirmed: pages then say "KidPool". Filling it updates the Privacy Policy,
+/* Registered company that operates KidsPool, exactly as registered (e.g. "NFC Solutions USA LLC").
+   Leave empty until confirmed: pages then say "KidsPool". Filling it updates the Privacy Policy,
    Terms, footer and search-engine data. */
 export const LEGAL_NAME = "";
-export const OPERATOR = LEGAL_NAME ? `${LEGAL_NAME}, doing business as KidPool` : "KidPool";
+export const OPERATOR = LEGAL_NAME ? `${LEGAL_NAME}, doing business as KidsPool` : "KidsPool";
 
 export const CONTACT_EMAIL = "info@nfcsolutionsusa.com";
 export const CONTACT_PHONE = "+1 (800) 965 5147";
@@ -41,15 +41,15 @@ export default function Footer() {
             <span className="rv-up" style={{ "--d": ".05s", display: "inline-block" }}><Wordmark /></span>
             <p className="sft__tag rv-title"><span className="sr-only">Trusted carpools with parents you know.</span><Words lines={["Trusted carpools with", "parents you know."]} highlight={{ word: "know.", className: "sft__mark" }} /></p>
             <p className="sft__lede rv-up" style={{ "--d": ".75s" }}>Share every kid ride with families you already know.</p>
-            <ul className="sft__social" aria-label="KidPool on social media">
+            <ul className="sft__social" aria-label="KidsPool on social media">
               {SOCIAL.map((s, i) => (
                 <li key={s.name} className="sft__socli" style={{ "--d": `${(0.85 + i * 0.12).toFixed(2)}s`, "--i": i }}>
                   {s.url ? (
-                    <a className="sft__soc" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`KidPool on ${s.name} (opens in a new tab)`}>
+                    <a className="sft__soc" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`KidsPool on ${s.name} (opens in a new tab)`}>
                       <svg viewBox="0 0 24 24" aria-hidden="true">{s.icon}</svg>
                     </a>
                   ) : (
-                    <span className="sft__soc sft__soc--soon" role="img" tabIndex={0} aria-label={`KidPool on ${s.name}: coming soon`}>
+                    <span className="sft__soc sft__soc--soon" role="img" tabIndex={0} aria-label={`KidsPool on ${s.name}: coming soon`}>
                       <svg viewBox="0 0 24 24" aria-hidden="true">{s.icon}</svg>
                     </span>
                   )}
@@ -100,7 +100,7 @@ export default function Footer() {
         </div>
 
         <div className="sft__bottom rv-up" style={{ "--d": "1.1s" }}>
-          <p>© {year} {LEGAL_NAME || "KidPool"}. Made for family pools.</p>
+          <p>© {year} {LEGAL_NAME || "KidsPool"}. Made for family pools.</p>
           <ul>
             <li><a href={url("privacy")}>Privacy Policy</a></li>
             <li><a href={url("terms")}>Terms & Conditions</a></li>

@@ -17,7 +17,7 @@ const I = {
 };
 const FEATURES = [
   /* Wording describes what each feature does, never a guarantee of safety (FTC). Keep in step with the live app. */
-  ["phone", "Private calls", "Calls connect through KidPool, so your phone number is never shown."],
+  ["phone", "Private calls", "Calls connect through KidsPool, so your phone number is never shown."],
   ["calls", "Calls are off by default", "Turn them on only if you want, and choose who can call: families you’ve ridden with or chatted with."],
   /* Address privacy, live tracking, SOS and driver checks are covered by the points above the grid.
      QR check-in is held back until schools or venues have agreed to use it. */
@@ -72,7 +72,7 @@ export default function Safety() {
         <div className="safety__copy">
           <span className="accent-bar rv-up" style={{ "--d": ".1s" }} aria-hidden="true" />
           <h2 className="display-l rv-title" aria-label="Your circle, backed by built-in safety"><Words lines={["Your circle, backed", "by built-in safety"]} /></h2>
-          <p className="lede rv-up" style={{ "--d": ".55s" }}>KidPool isn’t a public rideshare. It’s a private carpool network built around your family’s real-life community. Whether you’re trading off drives with neighbors or parents on the same soccer team, every driver is checked and every ride needs your approval.</p>
+          <p className="lede rv-up" style={{ "--d": ".55s" }}>KidsPool isn’t a public rideshare. It’s a private carpool network built around your family’s real-life community. Whether you’re trading off drives with neighbors or parents on the same soccer team, every driver is checked and every ride needs your approval.</p>
           <ul className="points">
             <li className="rv-up sp" style={{ "--d": ".8s" }}><Icon name="together" /><div><h3>Private pools, never the public</h3><p>Join the pool for your child’s school, team, or program, or request one for your own group. Rides are arranged only among families in the same pool.</p></div></li>
             <li className="rv-up sp" style={{ "--d": ".95s" }}><Icon name="check" /><div><h3>Background-checked drivers</h3><p>Every parent who offers a ride scans their driver’s license and passes a background check before taking the wheel.</p></div></li>

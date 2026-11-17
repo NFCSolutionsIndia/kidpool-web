@@ -60,7 +60,7 @@ export default function Trust() {
   }, [active, sitePaused]);
 
   return (
-    <section className={"trust" + (active ? " trust--in" : "")} aria-label="Who KidPool is for" ref={ref}>
+    <section className={"trust" + (active ? " trust--in" : "")} aria-label="Who KidsPool is for" ref={ref}>
       <div className="container">
         <div className="trust__frame">
           <span className="trust__sweep" aria-hidden="true" />

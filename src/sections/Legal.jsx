@@ -3,7 +3,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS, OPERATOR, LEGAL_NAME } f
 import { url } from "../lib/base";
 
 /* ================= Legal pages: Privacy Policy + Terms & Conditions =================
-   Draft content written for KidPool. Have it reviewed by a qualified lawyer before launch. */
+   Draft content written for KidsPool. Have it reviewed by a qualified lawyer before launch. */
 
 export const EFFECTIVE_DATE = "November 12, 2026";
 
@@ -11,7 +11,7 @@ const Contact = () => (
   <ul className="lg__contact">
     <li><b>Email</b><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
     <li><b>Phone</b><a href={`tel:${CONTACT_PHONE.replace(/[^\d+]/g, "")}`}>{CONTACT_PHONE}</a></li>
-    <li><b>Mail</b><span>{LEGAL_NAME || "KidPool"}, {CONTACT_ADDRESS}, USA</span></li>
+    <li><b>Mail</b><span>{LEGAL_NAME || "KidsPool"}, {CONTACT_ADDRESS}, USA</span></li>
   </ul>
 );
 
@@ -19,8 +19,8 @@ const PRIVACY = [
   {
     id: "overview", title: "Overview",
     body: <>
-      <p>{OPERATOR} (“KidPool”, “we”, “us”) helps parents and guardians coordinate their kids’ rides with other families in their own pools. This Privacy Policy explains what information we collect when you use the KidPool website and mobile apps (the “Service”), how we use it, who can see it, and the choices you have.</p>
-      <p>We designed KidPool around a simple principle: <strong>your family’s information is shared only with the families you choose to coordinate with, and only as much as a ride needs.</strong> We do not sell your personal information.</p>
+      <p>{OPERATOR} (“KidsPool”, “we”, “us”) helps parents and guardians coordinate their kids’ rides with other families in their own pools. This Privacy Policy explains what information we collect when you use the KidsPool website and mobile apps (the “Service”), how we use it, who can see it, and the choices you have.</p>
+      <p>We designed KidsPool around a simple principle: <strong>your family’s information is shared only with the families you choose to coordinate with, and only as much as a ride needs.</strong> We do not sell your personal information.</p>
     </>,
   },
   {
@@ -65,7 +65,7 @@ const PRIVACY = [
         <li><strong>School and venue staff:</strong> where staff check children in and out, they see the driver’s name and photo, the vehicle and plate, and the photos and first names of the children on that ride, so children are released only to the approved adult.</li>
         <li><strong>Service providers:</strong> companies that host our servers, send notifications and messages, provide maps, run background checks, or help with support and analytics, under contracts that limit how they can use your data. A list of our service providers is available on request.</li>
         <li><strong>Legal and safety reasons:</strong> when required by law, or when we believe in good faith it is needed to protect someone’s safety, investigate fraud or misuse, or defend our legal rights.</li>
-        <li><strong>Business changes:</strong> if KidPool is involved in a merger, acquisition or sale of assets, your information may be transferred, and this policy will continue to apply.</li>
+        <li><strong>Business changes:</strong> if KidsPool is involved in a merger, acquisition or sale of assets, your information may be transferred, and this policy will continue to apply.</li>
       </ul>
       <p><strong>We do not sell your personal information or share it for cross-context behavioral advertising.</strong> Our website does not currently use analytics or advertising tools. If we add any, we will name each one in this policy first, and they will respect your opt-out request and the Global Privacy Control signal from your browser. We never use children’s information for advertising.</p>
     </>,
@@ -73,7 +73,7 @@ const PRIVACY = [
   {
     id: "children", title: "Children’s privacy",
     body: <>
-      <p>KidPool is built for parents and guardians. Accounts are for adults aged 18 or over, and everyone who creates one confirms they are a parent or legal guardian. The Service is not directed to children: children do not create accounts, log in or message anyone in the app.</p>
+      <p>KidsPool is built for parents and guardians. Accounts are for adults aged 18 or over, and everyone who creates one confirms they are a parent or legal guardian. The Service is not directed to children: children do not create accounts, log in or message anyone in the app.</p>
       <p>A parent or guardian may add limited information about their own children (first name, age and grade, an optional photo, and their schools and activities) to arrange rides. A child’s photo helps the driver and school staff recognize the child; it is shown only to the driver of a booked ride and to staff at check-in and check-out, and you can remove it at any time. We use this information only to provide the Service, and the parent can review, change or delete it at any time. If we learn that a child has given us personal information directly, we will delete it.</p>
     </>,
   },
@@ -117,17 +117,17 @@ const PRIVACY = [
 const TERMS = [
   {
     id: "agreement", title: "Agreement to these terms",
-    body: <p>These Terms & Conditions (“Terms”) are an agreement between you and {OPERATOR} (“KidPool”, “we”, “us”) and govern your use of the KidPool website and mobile apps (the “Service”). By creating an account or using the Service, you agree to these Terms and to our Privacy Policy. If you do not agree, please do not use the Service.</p>,
+    body: <p>These Terms & Conditions (“Terms”) are an agreement between you and {OPERATOR} (“KidsPool”, “we”, “us”) and govern your use of the KidsPool website and mobile apps (the “Service”). By creating an account or using the Service, you agree to these Terms and to our Privacy Policy. If you do not agree, please do not use the Service.</p>,
   },
   {
-    id: "what", title: "What KidPool is, and isn’t",
+    id: "what", title: "What KidsPool is, and isn’t",
     body: <>
-      <p>KidPool is a coordination tool. It helps parents and guardians in the same pool (a group of families from the same school, team, club or other group) find each other, ask for and offer rides, and agree on the details together.</p>
-      <p><strong>KidPool is not a transportation provider, taxi or ride-hailing service.</strong> We do not employ drivers, provide vehicles or transport anyone. Rides are arranged directly between families, who decide for themselves whether to request, offer or accept a ride. Rides arranged through KidPool must not be offered for payment or profit.</p>
+      <p>KidsPool is a coordination tool. It helps parents and guardians in the same pool (a group of families from the same school, team, club or other group) find each other, ask for and offer rides, and agree on the details together.</p>
+      <p><strong>KidsPool is not a transportation provider, taxi or ride-hailing service.</strong> We do not employ drivers, provide vehicles or transport anyone. Rides are arranged directly between families, who decide for themselves whether to request, offer or accept a ride. Rides arranged through KidsPool must not be offered for payment or profit.</p>
     </>,
   },
   {
-    id: "eligibility", title: "Who can use KidPool",
+    id: "eligibility", title: "Who can use KidsPool",
     body: <ul>
       <li>You must be at least 18 years old and a parent or legal guardian, or be authorized by one, for any child you add.</li>
       <li>You must provide accurate information and keep it up to date.</li>
@@ -153,12 +153,12 @@ const TERMS = [
   },
   {
     id: "safety", title: "Safety features",
-    body: <p>KidPool offers features such as private calls, live ride tracking, QR check-in and check-out, arrival and running-late alerts, SOS, driver’s license checks and background checks for drivers, and block-and-report tools. Background checks review the records available at the time of the check; they cannot predict how anyone will behave in the future. These features help families coordinate, but no check is perfect and they do not guarantee anyone’s identity, conduct or safety. Parents and guardians remain responsible for deciding who their child rides with. In an emergency, always call 911 or your local emergency number.</p>,
+    body: <p>KidsPool offers features such as private calls, live ride tracking, QR check-in and check-out, arrival and running-late alerts, SOS, driver’s license checks and background checks for drivers, and block-and-report tools. Background checks review the records available at the time of the check; they cannot predict how anyone will behave in the future. These features help families coordinate, but no check is perfect and they do not guarantee anyone’s identity, conduct or safety. Parents and guardians remain responsible for deciding who their child rides with. In an emergency, always call 911 or your local emergency number.</p>,
   },
   {
     id: "conduct", title: "Pool rules",
     body: <>
-      <p>To keep KidPool safe and friendly, you agree not to:</p>
+      <p>To keep KidsPool safe and friendly, you agree not to:</p>
       <ul>
         <li>harass, threaten, discriminate against or harm anyone, or share inappropriate content;</li>
         <li>impersonate anyone, create fake accounts or join pools you don’t belong to;</li>
@@ -172,29 +172,29 @@ const TERMS = [
   },
   {
     id: "content", title: "Your content",
-    body: <p>You keep ownership of the content you add, such as messages and ride details. You give KidPool a limited license to store, display and process that content only to operate and improve the Service. You are responsible for the content you share and must have the right to share it.</p>,
+    body: <p>You keep ownership of the content you add, such as messages and ride details. You give KidsPool a limited license to store, display and process that content only to operate and improve the Service. You are responsible for the content you share and must have the right to share it.</p>,
   },
   {
     id: "termination", title: "Suspension and termination",
-    body: <p>You can stop using KidPool and delete your account at any time. We may suspend or end your access if you break these Terms, if we need to protect other families or the Service, or if required by law. Sections that by their nature should continue, such as disclaimers and limits of liability, survive termination.</p>,
+    body: <p>You can stop using KidsPool and delete your account at any time. We may suspend or end your access if you break these Terms, if we need to protect other families or the Service, or if required by law. Sections that by their nature should continue, such as disclaimers and limits of liability, survive termination.</p>,
   },
   {
     id: "disclaimers", title: "Disclaimers",
-    body: <p>The Service is provided “as is” and “as available”. To the fullest extent allowed by law, KidPool disclaims all warranties, express or implied, including fitness for a particular purpose and non-infringement. We do not guarantee that the Service will be uninterrupted or error-free, or that any family, driver or ride will meet your expectations. KidPool is not responsible for the actions or omissions of any user, or for any ride arranged between families.</p>,
+    body: <p>The Service is provided “as is” and “as available”. To the fullest extent allowed by law, KidsPool disclaims all warranties, express or implied, including fitness for a particular purpose and non-infringement. We do not guarantee that the Service will be uninterrupted or error-free, or that any family, driver or ride will meet your expectations. KidsPool is not responsible for the actions or omissions of any user, or for any ride arranged between families.</p>,
   },
   {
     id: "liability", title: "Limitation of liability",
-    body: <p>To the fullest extent allowed by law, KidPool will not be liable for any indirect, incidental, special, consequential or punitive damages, or for any loss arising from rides arranged between users. Our total liability for any claim relating to the Service will not exceed one hundred US dollars (US$100). Some states do not allow certain limitations, so parts of this section may not apply to you.</p>,
+    body: <p>To the fullest extent allowed by law, KidsPool will not be liable for any indirect, incidental, special, consequential or punitive damages, or for any loss arising from rides arranged between users. Our total liability for any claim relating to the Service will not exceed one hundred US dollars (US$100). Some states do not allow certain limitations, so parts of this section may not apply to you.</p>,
   },
   {
     id: "indemnity", title: "Indemnity",
-    body: <p>You agree to defend and hold harmless KidPool from claims, damages and expenses arising from your use of the Service, the rides you arrange or give, your content, or your breach of these Terms or the law.</p>,
+    body: <p>You agree to defend and hold harmless KidsPool from claims, damages and expenses arising from your use of the Service, the rides you arrange or give, your content, or your breach of these Terms or the law.</p>,
   },
   {
     id: "law", title: "Governing law",
     body: <>
       <p>These Terms are governed by the laws of the State of Georgia, USA, without regard to conflict-of-law rules.</p>
-      <p>Before starting any formal legal proceeding, you and KidPool agree to try to resolve the dispute informally. Send a written description of the dispute to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. If it is not resolved within 30 days, either side may proceed. Any dispute will be handled in the state or federal courts located in Georgia, unless the law where you live requires otherwise. Either side may bring a qualifying claim in small claims court.</p>
+      <p>Before starting any formal legal proceeding, you and KidsPool agree to try to resolve the dispute informally. Send a written description of the dispute to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. If it is not resolved within 30 days, either side may proceed. Any dispute will be handled in the state or federal courts located in Georgia, unless the law where you live requires otherwise. Either side may bring a qualifying claim in small claims court.</p>
     </>,
   },
   {
@@ -208,8 +208,8 @@ const TERMS = [
 ];
 
 const PAGES = {
-  privacy: { title: "Privacy Policy", intro: "How KidPool collects, uses and protects your family’s information.", sections: PRIVACY },
-  terms: { title: "Terms & Conditions", intro: "The rules for using KidPool to coordinate rides with families in your pool.", sections: TERMS },
+  privacy: { title: "Privacy Policy", intro: "How KidsPool collects, uses and protects your family’s information.", sections: PRIVACY },
+  terms: { title: "Terms & Conditions", intro: "The rules for using KidsPool to coordinate rides with families in your pool.", sections: TERMS },
 };
 
 export default function Legal({ page }) {
@@ -267,7 +267,7 @@ export default function Legal({ page }) {
               {s.body}
             </section>
           ))}
-          <a className="lg__back" href={url()}>← Back to KidPool</a>
+          <a className="lg__back" href={url()}>← Back to KidsPool</a>
         </article>
       </div>
     </main>

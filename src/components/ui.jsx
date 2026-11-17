@@ -26,7 +26,7 @@ export const Icon = ({ name, size = 24 }) => (
 // Placeholder notes are hidden on the live page (content to confirm is tracked outside the site).
 export const Placeholder = () => null;
 export const Wordmark = ({ small }) => (
-  <a href={url("#top")} className={"wordmark" + (small ? " wordmark--sm" : "")} aria-label="KidPool home">
-    <span className="wordmark__mark" aria-hidden="true"><Icon name="car" size={small ? 16 : 18} /></span>KidPool
+  <a href={url("#top")} className={"wordmark" + (small ? " wordmark--sm" : "")} aria-label="KidsPool home">
+    <span className="wordmark__mark" aria-hidden="true"><Icon name="car" size={small ? 16 : 18} /></span>KidsPool
   </a>
 );

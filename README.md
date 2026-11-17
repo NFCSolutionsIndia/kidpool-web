@@ -1,6 +1,6 @@
-# KidPool landing page
+# KidsPool landing page
 
-React 18 + Vite + three.js marketing site for KidPool, the carpool app for parents. Pages are pre-rendered to real HTML at build time for search engines and fast first paint.
+React 18 + Vite + three.js marketing site for KidsPool, the carpool app for parents. Pages are pre-rendered to real HTML at build time for search engines and fast first paint.
 
 Pages: Home, Privacy Policy (`/privacy`), Terms & Conditions (`/terms`) and a 404 page.
 
