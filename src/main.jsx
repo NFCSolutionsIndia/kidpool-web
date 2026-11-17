@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App";
-import "./styles/kidpool.css";
+import "./styles/kidspool.css";
 import { installRipple } from "./lib/ripple";
 
 installRipple();

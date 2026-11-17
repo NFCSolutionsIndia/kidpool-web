@@ -435,6 +435,9 @@ button{font:inherit;color:inherit}
 .store b{font-size:1.18rem;font-weight:650;letter-spacing:-.01em}
 .store:hover{transform:translateY(-3px);border-color:var(--lime);box-shadow:0 18px 30px -14px rgba(203,243,75,.55)}
 .store:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.store--soon{cursor:default}
+.store.store--soon:hover{transform:none;border-color:rgba(255,255,255,.22);box-shadow:0 14px 28px -16px rgba(0,0,0,.8)}
+.store--soon::before{display:none}
 
 /* carousel stage */
 .appdl__carousel{position:relative;z-index:1;display:grid;justify-items:center;gap:14px;min-width:0}
@@ -528,8 +531,6 @@ button{font:inherit;color:inherit}
 .cine__bar--top{top:0;transform:translateY(-100%)}
 .cine__bar--bottom{bottom:0;transform:translateY(100%)}
 .cine--in .cine__bar{transform:none}
-.cine__tag{display:inline-flex;align-items:center;gap:8px;color:var(--lime)}
-.cine__tc{font-variant-numeric:tabular-nums;color:rgba(255,255,255,.75)}
 
 /* title card + subtitle */
 .cine__titlecard{position:absolute;left:0;right:0;bottom:clamp(46px,9%,74px);display:grid;justify-items:center;gap:6px;text-align:center;padding:0 20px;pointer-events:none}

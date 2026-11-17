@@ -1,6 +1,6 @@
 # KidsPool — Compliance Checkpoints
 
-As of November 13, 2026
+As of November 17, 2026
 
 Each checkpoint below has a pass condition, a way to verify it, and who signs it off. A step is complete only when every checkpoint in it passes. Mark the status column `Not started`, `In progress`, `Passed` or `Blocked`.
 
@@ -78,9 +78,24 @@ This is practical guidance, not legal advice. A US lawyer should review the fina
 | 7.4 | Every marketing email has an unsubscribe link and the postal address | Send a test email; check the footer | Team | Not started |
 | 7.5 | Marketing texts are sent only with written consent, and "STOP" works | Test the sign-up form and reply STOP from a test phone | Team | Not started |
 
+## Step 8: Live-site review follow-ups (review of Nov 17, 2026)
+
+Items raised in the review of the live page (`nfcsolutionsindia.github.io/kidspool-web/`). The fixes are in the code; the live page shows them only after the next deploy (8.8).
+
+| # | Checkpoint (passes when…) | How to verify | Sign-off | Status |
+|---|---|---|---|---|
+| 8.1 | The brand name is "KidsPool" everywhere on the site, including the scene player and app screenshot alt text | Search the built pages for "KidsPool" without the "s"; zero matches (the scene player's "KIDSPOOL" is the same name in capitals) | Dev | Passed (Nov 17, 2026) |
+| 8.2 | The official name "KidsPool" and the domain `www.kidspool.app` are confirmed, and the domain is registered | Domain registration on file; `VITE_SITE_URL` in `.env` matches it (the canonical URL, sitemap and share links use it) | Team | Not started |
+| 8.3 | App Store and Google Play listing name and developer name match "KidsPool" and the legal name in 1.1 | Compare both store listings with the website footer | Team | Not started |
+| 8.4 | Store badges never link to "#" before launch | Before store URLs are set, both badges read "Coming soon to Google Play / App Store" and are not clickable (`AppDownload.jsx` lines 8–9) | Dev | Passed (Nov 17, 2026) |
+| 8.5 | The live store URLs are added at launch, and each badge opens the right listing | Paste both URLs into `AppDownload.jsx` lines 8–9, rebuild, click each badge | Team + Dev | Not started |
+| 8.6 | All 16 FAQ questions and answers and all 4 "How it works" steps are in the page HTML before any JavaScript runs | View page source (Ctrl+U) on the live page and search for "Are rides paid?" and "Review and confirm together"; FAQPage structured data is present | Dev | Passed (Nov 17, 2026, in the build) |
+| 8.7 | The hero hint and scene player use story language, not video-editor labels | Hero reads "Explore the neighborhood: drag to look around"; the player shows "Step 1 of 4", with no timecode or PLAYING/PAUSED label | Dev | Passed (Nov 17, 2026) |
+| 8.8 | The fixes in 8.1, 8.4, 8.6 and 8.7 are deployed and confirmed on the live page | Open the live URL in a private window and recheck each item | Dev | Not started |
+
 ## Launch gates
 
-**Before public launch, these must all pass:** Steps 1, 2, 3 and 6, plus checkpoints 4.1, 7.1, 7.2 and 7.3.
+**Before public launch, these must all pass:** Steps 1, 2, 3 and 6, plus checkpoints 4.1, 7.1, 7.2, 7.3, 8.2, 8.3, 8.5 and 8.8.
 
 **Before running any paid ads or adding analytics:** all of Step 4 must pass.
 

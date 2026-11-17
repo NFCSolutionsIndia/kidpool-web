@@ -18,13 +18,13 @@ npm run preview    # serve dist/ the way a static host would
 ## Deploying
 
 - **Own domain:** set `VITE_SITE_URL` in `.env` (used for canonical links, the sitemap and share images), run `npm run build` and upload `dist/`.
-- **GitHub Pages:** `.github/workflows/deploy.yml` builds with `BASE_PATH=/kidpool-web/` and publishes to https://nfcsolutionsindia.github.io/kidpool-web/. Every image and link goes through `src/lib/base.js`, so the site works at a domain root or in a sub-folder.
+- **GitHub Pages:** `.github/workflows/deploy.yml` builds with `BASE_PATH=/kidspool-web/` and publishes to https://nfcsolutionsindia.github.io/kidspool-web/. Every image and link goes through `src/lib/base.js`, so the site works at a domain root or in a sub-folder.
 
 ## Settings to fill in before launch
 
 | What | Where |
 |---|---|
-| Real domain | `VITE_SITE_URL` in `.env` (placeholder: https://www.kidpool.app) |
+| Real domain | `VITE_SITE_URL` in `.env` (placeholder: https://www.kidspool.app) |
 | Registered company name | `LEGAL_NAME` in `src/sections/Footer.jsx` (fills the Privacy Policy, Terms, footer and search data) |
 | App Store and Google Play links | `APP_STORE_URL` and `PLAY_STORE_URL` in `src/sections/AppDownload.jsx` |
 | Social profile links | `SOCIAL` in `src/sections/Footer.jsx` (empty links show "Coming soon") |
@@ -51,7 +51,7 @@ src/
   hooks/                 useThreeScene, useTilt, useMotionPause (site-wide pause)
   lib/                   base (base path), brand (colors), consent (privacy choices),
                          ripple (button click effect), threeKit (3D builders)
-  styles/kidpool.css     design tokens and all styles
+  styles/kidspool.css     design tokens and all styles
 public/                  photos (WebP), app screenshots, icons, share image, web manifest
 scripts/prerender.mjs    writes each page's HTML, sitemap.xml and robots.txt
 ```

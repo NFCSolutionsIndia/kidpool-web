@@ -45,7 +45,7 @@ export default function Hero() {
             <div className="hero__tag hero__tag--a"><span className="hero__tag-icon">✓</span><div><b>Seat offered</b><small>Mon · 8:05 am</small></div></div>
             <div className="hero__tag hero__tag--b"><span className="hero__tag-icon hero__tag-icon--ink">★</span><div><b>Same pool</b><small>Families you know</small></div></div>
           </div>
-          <figcaption className="scene-hint"><Icon name="drag" size={16} />Drag to turn the neighborhood<PauseToggle className="pause-toggle--hero" label="animation" /></figcaption>
+          <figcaption className="scene-hint"><Icon name="drag" size={16} />Explore the neighborhood: drag to look around<PauseToggle className="pause-toggle--hero" label="animation" /></figcaption>
         </figure>
       </div>
       <svg className="hero__wave" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">

@@ -11,7 +11,7 @@ import { loadEnv } from "vite";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
 const ssrDir = path.join(root, "dist-ssr");
-const SITE = (loadEnv("production", root).VITE_SITE_URL || "https://www.kidpool.app").replace(/\/+$/, "");
+const SITE = (loadEnv("production", root).VITE_SITE_URL || "https://www.kidspool.app").replace(/\/+$/, "");
 
 const { render, FAQS, SOCIAL, LEGAL_NAME, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS } =
   await import(pathToFileURL(path.join(ssrDir, "entry-server.js")).href);

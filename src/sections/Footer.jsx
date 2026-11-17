@@ -13,7 +13,7 @@ export const CONTACT_EMAIL = "info@nfcsolutionsusa.com";
 export const CONTACT_PHONE = "+1 (800) 965 5147";
 export const CONTACT_ADDRESS = "Saddlebrook Office Park, 11030 Jones Bridge Road, Suite 202, Johns Creek, GA 30022";
 
-/* Social profiles: paste each full profile URL when it exists (e.g. "https://www.instagram.com/kidpool").
+/* Social profiles: paste each full profile URL when it exists (e.g. "https://www.instagram.com/kidspool").
    An empty url shows the icon as "coming soon" (not clickable); a filled one becomes a live link
    and is also added to the site's structured data (Organization "sameAs") for search engines. */
 export const SOCIAL = [
