@@ -26,11 +26,11 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          # site is served from https://nfcsolutionsindia.github.io/kidspool-web/
-          BASE_PATH: /kidspool-web/
+          # site is served from https://nfcsolutionsindia.github.io/kidpool-web/
+          BASE_PATH: /kidpool-web/
           # canonical links, sitemap and share image point at the GitHub Pages address
           # (remove this line once the site moves to its own domain set in .env)
-          VITE_SITE_URL: https://nfcsolutionsindia.github.io/kidspool-web
+          VITE_SITE_URL: https://nfcsolutionsindia.github.io/kidpool-web
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

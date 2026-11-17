@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const root = path.dirname(fileURLToPath(import.meta.url));
 
 // Where the site is served from. "/" for a normal domain; the GitHub Pages workflow sets
-// BASE_PATH=/kidspool-web/ so the build works at https://<org>.github.io/kidspool-web/.
+// BASE_PATH=/kidpool-web/ so the build works at https://<org>.github.io/kidpool-web/.
 // Images and links go through src/lib/base.js, so every page works under either.
 const BASE = (() => {
   const b = (process.env.BASE_PATH || "/").trim();

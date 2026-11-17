@@ -80,7 +80,7 @@ This is practical guidance, not legal advice. A US lawyer should review the fina
 
 ## Step 8: Live-site review follow-ups (review of Nov 17, 2026)
 
-Items raised in the review of the live page (`nfcsolutionsindia.github.io/kidspool-web/`). The fixes are in the code; the live page shows them only after the next deploy (8.8).
+Items raised in the review of the live page (`nfcsolutionsindia.github.io/kidpool-web/`). The fixes are in the code; the live page shows them only after the next deploy (8.8).
 
 | # | Checkpoint (passes when…) | How to verify | Sign-off | Status |
 |---|---|---|---|---|

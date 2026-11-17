@@ -18,7 +18,7 @@ npm run preview    # serve dist/ the way a static host would
 ## Deploying
 
 - **Own domain:** set `VITE_SITE_URL` in `.env` (used for canonical links, the sitemap and share images), run `npm run build` and upload `dist/`.
-- **GitHub Pages:** `.github/workflows/deploy.yml` builds with `BASE_PATH=/kidspool-web/` and publishes to https://nfcsolutionsindia.github.io/kidspool-web/. Every image and link goes through `src/lib/base.js`, so the site works at a domain root or in a sub-folder.
+- **GitHub Pages:** `.github/workflows/deploy.yml` builds with `BASE_PATH=/kidpool-web/` and publishes to https://nfcsolutionsindia.github.io/kidpool-web/. Every image and link goes through `src/lib/base.js`, so the site works at a domain root or in a sub-folder.
 
 ## Settings to fill in before launch
 
